@@ -104,7 +104,9 @@ including a manual mode for chat windows.
 
 ## Credit
 
-Adapted from Dave Rensin's Elephant–Goldfish Model and Google's
+Adapted from Dave Rensin's Elephant–Goldfish Model
+([original essay](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874))
+and Google's
 [elephant-goldfish-model](https://github.com/google/elephant-goldfish-model)
 project (Apache-2.0). The workflow structure and the fix, contest, escalate,
 and decline rules for review findings follow that project. The text here is

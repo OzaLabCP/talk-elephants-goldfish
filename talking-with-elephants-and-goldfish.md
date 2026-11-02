@@ -4,6 +4,8 @@ Its organizing principle is: **develop with full context, review through fresh e
 
 The Elephant maintains the purpose, background, evidence, and reasoning behind the presentation. Goldfish reviewers examine deliberately limited materials without the preparation conversation. The presenter or instructor makes the judgments and remains responsible for the content.
 
+The two animals also describe a real audience. **Elephants** have the context and are paying close attention: they remember what was said ten minutes ago and follow the thread. **Goldfish** know less, or stopped listening for a minute and are trying to catch up: they have only what is on the screen and what is being said now. A good talk works for both. The model uses an Elephant collaborator and Goldfish reviewers to test it for both.
+
 This is an adaptation of Dave Rensin’s [Elephant–Goldfish Model](https://drensin.medium.com/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874). The original model uses a context-rich design process and fresh reviews to expose missing assumptions before implementation. [Google’s explanation](https://opensource.googleblog.com/2026/10/introducing-elephant-goldfish-model-plugin.html) and the [project repository](https://github.com/google/elephant-goldfish-model) describe its software workflow. The talk and lecture workflows below extend that approach.
 
 | Design question | Professional talks | Educational lectures |
@@ -18,6 +20,15 @@ The two versions can be combined for professional training, workshops, and resea
 # The shared preparation cycle
 
 **Orient → define outcomes → design the experience → review → produce and rehearse → deliver → update.**
+
+In practice, the cycle runs in four stages. Each step ends by naming the next one, and a short progress record keeps the place between sessions.
+
+| Stage | Steps | Working artifacts |
+| - | - | - |
+| **A. Understand** | Take stock of existing material (when reusing); write the brief | Inventory, brief |
+| **B. Design** | Adapt existing material (when reusing); plan the experience; review the plan | Inventory decisions, experience plan, review record |
+| **C. Build** | Build the materials; check for drift; rehearse; review the materials | Delivery package, review record |
+| **D. Deliver and learn** | Deliver; debrief against the brief and the reviews | Debrief, updated brief |
 
 ## Establish the roles
 
@@ -34,6 +45,16 @@ The two versions can be combined for professional training, workshops, and resea
 Write the desired outcome and how you will recognize it. Identify the audience’s starting knowledge and the constraints of the occasion. Label important unknowns and decide which require clarification.
 
 Use outlines, rough diagrams, sample questions, and existing slides to develop the structure. Begin visual polish once the outcomes and sequence are stable enough to guide it.
+
+## Describe the audience by role and distance
+
+Two facts about the audience shape a talk more than any others.
+
+**What they are there to do.** Audiences come to learn (students, trainees), to evaluate the presenter (competition judges, a thesis committee, a hiring or grant panel), to decide (a leadership briefing, a funding meeting), or to stay informed (a research talk without judges, a colloquium, a public lecture). The role sets the outcome and the evidence of success. When a session serves several roles, record which one defines success.
+
+**How close they are to the field.** Specialists need little background and expect precise methods and limitations. Adjacent experts need to know why the problem matters, with key concepts translated. Informed non-experts need the question, the finding, how confident to be, and what it means, without unexplained terms. Novices need all of that built from familiar ideas. Do not infer distance from the venue: a competition panel may be mixed, and a “general audience” may mean educated non-experts or the public.
+
+When an audience evaluates the presenter, its criteria are information that audience has. Give the rubric to reviewers who stand in for the judges. This is the reverse of a lecture, where students do not have the answer key and learner reviews should not have it either.
 
 ## Maintain four working artifacts
 
@@ -62,12 +83,16 @@ Repeat the big-picture review after a round of substantial revisions. Detailed c
 | Big-picture review | Brief, a short outline of the experience plan, and, when adapting, the inventory of the existing material. | Slide-level detail and the preparation conversation. |
 | Design review | Brief, experience plan, constraints, and referenced evidence. | Preparation conversation and undocumented explanations. |
 | Audience or learner comprehension | Expected prior knowledge and exactly what participants encounter. | Private rationale, additional answer cues, and background unavailable to participants. |
+| Rejoining listener | The opening, then what participants encounter from a chosen point onward, with the stretch before it removed. | The missed stretch, private rationale, and background unavailable to participants. |
 | Accuracy and evidence | Claims, examples, sources, data, and qualifications. | Unsupported explanations offered only in conversation. |
 | Delivery review | Rendered materials and a timed rehearsal, recording, or observation. | Assumptions that the written outline proves readability or pacing. |
+| Judge | What judges see and hear, the rubric and rules, and the panel’s background. | The brief, private rationale, and information about other entries. |
 
 For comprehension, ask the reviewer to reconstruct the message before revealing the private statement of intent. Preserve any objectives or summaries that participants actually receive. For assessment review, obtain an independent attempt before revealing the answer key, then check the key and rubric.
 
 A live talk is reviewed with its spoken explanation. A deck or recording distributed independently needs a separate review of that experience. For long or complex sequences, review sections in presentation order so later explanations do not conceal earlier confusion.
+
+For a live talk or class longer than about ten minutes, add a rejoining review. A fresh reviewer hears the opening, misses a stretch, and rejoins partway through, as a listener does after looking at a phone. Choose rejoin points where losing the thread would cost the most, such as the start of the results. The review shows whether section titles, recaps, and restated questions let a listener back in.
 
 Use a separate review context; asking the authoring conversation to forget its history does not create an independent review. When separation is unavailable, label the result an internal critique.
 
@@ -119,7 +144,7 @@ Keep a shared collection of reliable sources and reusable material, with a disti
 
 A deck that is reused and revised gradually separates from its brief. Slides added for one audience remain for the next, qualifications disappear during tightening, sources age, and the ending shifts purpose. Run a drift check before each reuse, after substantial revisions, and whenever the brief or the underlying evidence changes.
 
-Compare the current materials with the current brief:
+Use a fresh reviewer for the comparison when possible: whoever built the materials tends to see what was meant rather than what is there. Compare the current materials with the current brief:
 
 - Does each section still serve an outcome in the brief?
 
@@ -143,7 +168,9 @@ The professional workflow supports research talks, conference presentations, pro
 
 Record:
 
-- **Occasion and audience:** who will attend, why they are there, what they already know, and whether important subgroups have different needs.
+- **Occasion and audience:** who will attend, what they are there to do (learn, evaluate, decide, or stay informed), how close they are to the field, what they already know, and whether important subgroups have different needs.
+
+- **Evaluation (judged talks):** the rubric, the rules and how strictly time is enforced, the panel’s composition and expertise, and the Q&A format.
 
 - **Purpose and outcome:** inform, explain, persuade, seek a decision, invite collaboration, or establish shared understanding.
 
@@ -157,7 +184,7 @@ Record:
 
 - **Boundaries:** material that must be included, what is outside scope, and what can move to an appendix.
 
-A useful outcome statement is: “After this talk, [audience] should understand [message and implications] well enough to [relevant use or next step].” An informative talk can end in shared understanding without an action request.
+A useful outcome statement is: “After this talk, [audience] should understand [message and implications] well enough to [relevant use or next step].” An informative talk can end in shared understanding without an action request. For a judged talk: “Against [criteria], [panel] should see that [claim about the work], and remember [one distinctive point] after hearing the other entries."
 
 ## Design the argument and experience
 
@@ -359,6 +386,8 @@ Apply these rules:
 
 - **The wish to defend the material is not evidence.** Whoever wrote the material should expect to want to contest findings about it.
 
+Put every decision in front of the presenter in the conversation, complete enough to decide from: a one-line summary, one table with a proposed response for each finding, the questions only the presenter can answer, and an invitation to name only the exceptions. Files hold the reasoning and the record, not the decision. Do not assume the presenter has opened them.
+
 Update the actual brief, materials, or activity; a conversational explanation does not repair the artifact. Recheck the parts affected by substantial changes.
 
 Stop reviewing when essential corrections are resolved, important trade-offs are explicit, and the relevant rehearsal has passed. Reviewers do not need to agree on every stylistic choice.
@@ -372,7 +401,7 @@ Scale effort to the work:
 | Major change of audience, purpose, or course level | Start with a big-picture review and reconsider outcomes and sequence before deciding what to reuse. |
 | Consequential professional decision or difficult core course concept | Add a subject expert or representative human reviewer and scrutinize the evidence or student tasks. |
 
-Keep two improvement loops visible: revisions before delivery, and changes based on actual audience or student responses afterward.
+Keep two improvement loops visible: revisions before delivery, and changes based on actual audience or student responses afterward. After delivery, compare the problems the reviewers predicted with those that actually occurred. Problems nobody predicted show what the next round of reviews should look for.
 
 # The same subject in the two versions
 
@@ -394,7 +423,7 @@ The evidence may overlap, while the sequence, depth, activities, and measures of
 >
 > Develop the argument and a timed experience plan before polishing slides. When more than one structure is defensible, show me the options with their trade-offs and let me choose. If material already exists, recommend what to keep, reframe, replace, remove, or move to supporting material, with reasons.
 >
-> Start reviews with a fresh big-picture review of whether this talk fits the audience, purpose, and occasion. Then prepare distinct materials for fresh comprehension, evidence, and delivery reviews. Keep the private intended message out of the initial comprehension test while retaining everything the audience actually receives. For each finding, propose whether to fix, contest, escalate, or decline it; a contest must cite something the reviewer could have read, and anything only I can confirm comes to me. I decide, and accepted changes go into the materials. If I am reusing a deck, check it for drift from the current brief. Help me plan human reviewers so that at least one representative person stays fresh for the full rehearsal.
+> Start reviews with a fresh big-picture review of whether this talk fits the audience, purpose, and occasion. Then prepare distinct materials for fresh comprehension, evidence, and delivery reviews. Keep the private intended message out of the initial comprehension test while retaining everything the audience actually receives. For each finding, propose whether to fix, contest, escalate, or decline it; a contest must cite something the reviewer could have read, and anything only I can confirm comes to me. I decide, and accepted changes go into the materials. If I am reusing a deck, check it for drift from the current brief. Help me plan human reviewers so that at least one representative person stays fresh for the full rehearsal. For a live talk, include a rejoining review from partway through. Put every decision I need to make in the chat as one table, with your proposal for each, and let me name only the exceptions.
 >
 > Finish with a delivery package, a rehearsal plan, likely questions, and a short plan for learning from audience responses.
 >
@@ -408,7 +437,7 @@ The evidence may overlap, while the sequence, depth, activities, and measures of
 >
 > Connect each objective to prerequisites, explanation, practice, an independent student response, and feedback. Develop a timed lesson plan that includes student thinking and transitions. When more than one sequence is defensible, show me the options with their trade-offs and let me choose. Explain how existing material should be retained or changed.
 >
-> Start reviews with a fresh big-picture review of whether this session fits these students, this point in the course, and the time available. Then prepare distinct materials for fresh prerequisite, misconception, accuracy, assessment, and delivery reviews. Keep instructor rationale and answer keys out of the initial learner or task review. Then review the response criteria and solutions explicitly. For each finding, propose whether to fix, contest, escalate, or decline it; a contest must cite something the reviewer could have read, and anything only I can confirm comes to me. If I am reusing a deck, check it for drift from the current brief. Help me plan human reviewers so that at least one representative person stays fresh for the final version.
+> Start reviews with a fresh big-picture review of whether this session fits these students, this point in the course, and the time available. Then prepare distinct materials for fresh prerequisite, misconception, accuracy, assessment, and delivery reviews. Keep instructor rationale and answer keys out of the initial learner or task review. Then review the response criteria and solutions explicitly. For each finding, propose whether to fix, contest, escalate, or decline it; a contest must cite something the reviewer could have read, and anything only I can confirm comes to me. If I am reusing a deck, check it for drift from the current brief. Help me plan human reviewers so that at least one representative person stays fresh for the final version. Include a rejoining review from partway through the session. Put every decision I need to make in the chat as one table, with your proposal for each, and let me name only the exceptions.
 >
 > Finish with teaching materials, separate student materials and instructor notes, a plan for responding to student difficulties, and a way to use student work to improve the next lesson.
 >
@@ -416,7 +445,7 @@ The evidence may overlap, while the sequence, depth, activities, and measures of
 
 ## Fresh review
 
-> Review the supplied version independently. Use only the material authorized for this review. Your role is [big-picture, design, comprehension, evidence, assessment, delivery, or judge scoring against the supplied criteria]. Expected participant background is [insert, including how close they are to the field: specialists, adjacent experts, informed non-experts, or novices].
+> Review the supplied version independently. Use only the material authorized for this review. Your role is [big-picture, design, comprehension, rejoining (starting partway through), evidence, assessment, delivery, drift (comparing materials with the brief, plan, and decisions), or judge scoring against the supplied criteria]. Expected participant background is [insert, including how close they are to the field: specialists, adjacent experts, informed non-experts, or novices].
 >
 > If the role, participant background, or review materials are missing, ask me for them before you begin. Do not ask what I intended or request background the participants would not have; work from the materials as supplied.
 >
