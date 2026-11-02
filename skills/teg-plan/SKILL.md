@@ -46,9 +46,12 @@ approved," and record it in `progress.md` so a later session can resume.
   the trade-offs and ask again. Decide mechanical matters yourself.
 - **Stress-test.** Before agreeing with a proposal, say what is weak or
   missing in it. Do not praise.
-- **One question per turn.** Approval gates count as questions.
-- **Write the plan as you go.** Update `experience_plan.md` after each
-  approved section. In chat, say what changed and ask for approval.
+- **One question per turn.** Approval gates count as questions. If the person asks you to batch questions, number every
+  question, including the one about how to proceed, and put that one
+  last. Never put a question after a numbered list.
+- **Show what you ask them to approve.** Update `experience_plan.md` as you
+  go. In chat, show the section's content (the segment table) before asking
+  for approval. Describing the change is not enough to approve it.
 
 ## Step 1: Check the inputs
 
@@ -98,7 +101,7 @@ the middle.
   use: the message and its implications, the decision requested, the next
   step, or for lectures an exit response and the link to the next session.
 
-Write them to the plan and ask for approval.
+Write them to the plan, show them in chat, and ask for approval.
 
 ## Step 5: Draft the middle, one section at a time
 

@@ -56,10 +56,14 @@ of 4 detailed reviews done."
 3. **Show findings as reviewers wrote them.** Do not filter, soften, or
    re-rate them. You may merge duplicates; keep every reviewer's wording and
    every importance rating they gave.
-4. **One question per turn** when you need the presenter's input.
-5. **Write to files, summarize in chat.** Packets, reports, and the review
-   record go in files. In chat, give the path, counts, and anything that
-   needs the presenter's knowledge.
+4. **One question per turn** when you need the presenter's input. If the
+   presenter asks you to batch questions, number every question, including
+   the one about how to proceed, and put that one last. Never put a
+   question after a numbered list.
+5. **Decisions in chat, reasoning in files.** Packets, full reports, and the
+   review record go in files. Everything the presenter must decide appears
+   in chat as a table they can act on without opening a file. Give file
+   paths only for detail they may want.
 
 ## Step 1: Gather
 
@@ -227,15 +231,23 @@ Summary: [n] essential, [n] meaningful, [n] optional; [n] escalated
 
 ## Step 9: The presenter decides
 
-In chat, give the counts and list the escalated findings first. Then ask one
-question about how to proceed:
+In chat, show:
 
-- Go through the essential findings one at a time
-- Accept all proposed responses, then raise objections
-- Edit the decisions directly in `review_report.md`
+1. A decision table, one row per finding: ID, location, the proposed change
+   in one line, importance, proposed response. If there are more than about
+   25 rows, show the essential and escalated findings in full and group the
+   rest by section, one line each.
+2. The escalated questions, numbered, each answerable in a word or a line.
 
-For each finding, the presenter accepts the proposed response, chooses a
-different one, or changes the fix. Record the decision and the reason.
+End with one question, numbered after the escalated questions so it comes
+last: "Reply with the IDs you'd change or reject; everything else is
+accepted." Offer going through findings one at a time only if the presenter
+asks for it.
+
+For each ID the presenter names, ask what they want instead if it is not
+clear: a different response or a different fix. Record every decision and
+its reason in `review_report.md`. For findings nobody named, the reason is
+"accepted as proposed."
 
 ## Step 10: Apply and record
 

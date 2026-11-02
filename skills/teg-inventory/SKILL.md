@@ -44,8 +44,12 @@ For a long deck, add a short progress note every few sections, such as
   defective because it cannot stand alone. Record how much it depends on
   narration, and ask (or record an open question) before concluding anything.
 - **Describe before judging.** Finish Part A before recommending actions.
-- **One question per turn.** Ask only what changes the inventory.
-- **Write to files, summarize in chat.**
+- **One question per turn.** Ask only what changes the inventory. If the person asks you to batch questions, number every
+  question, including the one about how to proceed, and put that one
+  last. Never put a question after a numbered list.
+- **Decisions in chat, reasoning in files.** Anything the presenter must
+  decide appears in chat, complete enough to decide from. `inventory.md`
+  holds the full description and the record.
 
 ## Step 1: Prepare the material
 
@@ -178,12 +182,14 @@ the presenter.
 
 ### Step 10: Decide
 
-Show the summary in chat: counts by action, the missing items, and the time
-check. Ask one question about how to proceed:
+In chat, show a table with one row per section: section, slides,
+recommended action, and a one-line reason. Counts alone ("4 keep, 3
+reframe") are not something anyone can decide on. Below the table, list the
+missing items and the time check, one line each.
 
-- Go through the recommendations one section at a time
-- Accept all recommendations, then raise objections
-- Edit the decisions directly in `inventory.md`
+End with one question: "Reply with the sections you'd change; everything
+else is accepted." Offer going through the sections one at a time only if
+the presenter asks for it.
 
 Record each decision and its reason. Add consequential decisions to the
 decision record in `brief.md`.

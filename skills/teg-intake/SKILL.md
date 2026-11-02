@@ -52,6 +52,9 @@ timing and success."
 ## How to ask
 
 - **One question per turn.** Wait for the answer before asking the next.
+  If the person asks you to batch questions, number every
+  question, including the one about how to proceed, and put that one
+  last. Never put a question after a numbered list.
 - **Ask the most consequential question next.** Choose the question whose
   answer would most change the outcome, audience, structure, or scope. The
   order in `question_bank.md` is a default, not a script. Skip questions that

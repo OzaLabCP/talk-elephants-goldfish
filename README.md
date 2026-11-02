@@ -56,6 +56,12 @@ generate slides: it helps you decide what the talk should do, plans it,
 checks it, and helps you learn from it. You build the slides in your own
 tool.
 
+**How decisions work.** Anything you have to decide appears in chat,
+complete enough to decide from, so you never need to open a file to make a
+decision. Files hold the reasoning and the record. When there are many items
+to decide, you get one table with a proposal for each, and you reply with
+only the ones you'd change.
+
 The skills use the `SKILL.md` format that Claude Code, Codex, and other
 agent tools read. To use one in a plain chat window, paste in its
 `SKILL.md` and any files it refers to. Fresh reviews need a separate
