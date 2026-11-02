@@ -17,6 +17,19 @@ the decisions. The result of this step is `brief.md`.
 Use `question_bank.md` (next to this file) for the questions and follow-up
 probes.
 
+## Where this fits
+
+This is **Stage A · Understand → Brief** (stage map in
+`../teg-start/SKILL.md`). At the start, read `progress.md` if it exists,
+then show a status line, for example:
+
+> **Stage A · Understand → Brief** (in progress). Done: Take stock. After this: Adapt, then Plan.
+
+Tell the person this is an interview of about 6–12 questions, one at a
+time, and that they can say "draft it" whenever they want. Every few
+questions, add a short progress note, such as "Question 5, about 3 more, on
+timing and success."
+
 ## Before the first question
 
 1. Read everything the person supplied: topic description, notes, outline,
@@ -248,9 +261,18 @@ Version: [date]; adapted from: [earlier brief or deck, if any]
 
 ## After the brief
 
-Tell the person where `brief.md` is. Suggest the next step: if existing
-material is being adapted, Part B of the inventory (`teg-inventory`);
-otherwise the experience plan (`teg-plan`). Do not start making slides.
+Update `progress.md` (format in `../teg-start/SKILL.md`): mark Brief done,
+and Adapt as next or skipped. Then end with a next-step block, showing only
+the "Next" line that applies:
+
+> **Brief complete** → saved to `brief.md`.
+> **Next: Adapt** (`teg-inventory`, Part B): decide what to keep from your
+> existing deck.
+> **Next: Plan** (`teg-plan`): build the timed plan, one section at a time.
+> Say "next" to start, "status" to see the whole map, or stop here and pick
+> up later.
+
+Do not start making slides.
 
 ## Questions in later steps
 

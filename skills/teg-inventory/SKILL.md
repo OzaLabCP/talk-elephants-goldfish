@@ -18,6 +18,17 @@ against the current brief. The presenter or instructor decides every action.
 
 The result is `inventory.md`.
 
+## Where this fits
+
+Part A is **Stage A · Understand → Take stock**. Part B is **Stage B ·
+Design → Adapt** (stage map in `../teg-start/SKILL.md`). At the start, read
+`progress.md` if it exists, then show a status line, for example:
+
+> **Stage A · Understand → Take stock** (in progress). After this: Brief.
+
+For a long deck, add a short progress note every few sections, such as
+"Sections 1–4 of 9 described."
+
 ## Rules
 
 - **Never change the original.** Copy it to `original/` before you start.
@@ -229,9 +240,24 @@ changed" to "Time check", belong to Part B.
 
 ## After the inventory
 
-- **After Part A only:** suggest the intake interview (`teg-intake`), then
-  Part B.
-- **After Part B:** suggest building the experience plan (`teg-plan`), which
-  uses these decisions. A big-picture review (`teg-review`) can also take
-  the inventory and the brief to check that the adaptation answers the new
-  audience's question before detailed work starts.
+Update `progress.md` (format in `../teg-start/SKILL.md`), then end with a
+next-step block.
+
+After Part A:
+
+> **Take stock complete** → saved to `inventory.md`.
+> **Next: Brief** (`teg-intake`): an interview about your new audience and
+> goal, starting from what the original was for.
+> Say "next" to start, "status" to see the whole map, or stop here and pick
+> up later.
+
+After Part B:
+
+> **Adapt complete** → decisions saved in `inventory.md`.
+> **Next: Plan** (`teg-plan`): build the timed plan from these decisions.
+> Say "next" to start, "status" to see the whole map, or stop here and pick
+> up later.
+
+If the adaptation is a large change, mention that a big-picture review
+(`teg-review`) of the brief and inventory can come first, to check that the
+reused material answers the new audience's question.

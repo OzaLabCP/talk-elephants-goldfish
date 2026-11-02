@@ -17,8 +17,21 @@ You are the Elephant. Turn the brief into a plan for what people will see,
 hear, and do, minute by minute. The presenter or instructor chooses among
 options and approves each section. The result is `experience_plan.md`.
 
-Do not make slides in this step. Polish comes after the plan has been
-reviewed.
+Do not make slides in this step. This package never generates slides; the
+person builds them from the reviewed plan, in their own tool.
+
+## Where this fits
+
+This is **Stage B · Design → Plan** (stage map in `../teg-start/SKILL.md`).
+At the start, read `progress.md` if it exists, then show a status line, for
+example:
+
+> **Stage B · Design → Plan** (in progress). Done: Brief, Adapt. After this: Review the plan.
+
+Tell the person the plan is built in a fixed order: structure, time budget,
+opening and ending, then the middle one section at a time, each with their
+approval. After each approval, add a progress note, such as "Section 2 of 5
+approved," and record it in `progress.md` so a later session can resume.
 
 ## Rules
 
@@ -152,8 +165,13 @@ Compare the whole plan with the brief and report any mismatch:
   is visible somewhere.
 - The total time fits the slot with a buffer, and the shorter route works.
 
-Then suggest the next step: a big-picture and design review of the plan
-(`teg-review`) before anyone builds slides.
+Then update `progress.md` and end with a next-step block:
+
+> **Plan complete** → saved to `experience_plan.md`.
+> **Next: Review the plan** (`teg-review`): fresh reviewers check the big
+> picture and the design before you build slides.
+> Say "next" to start, "status" to see the whole map, or stop here and pick
+> up later.
 
 ## experience_plan.md
 

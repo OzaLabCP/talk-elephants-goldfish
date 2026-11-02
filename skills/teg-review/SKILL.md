@@ -27,6 +27,23 @@ Files in this folder:
 - `reviewers/`: instructions for each reviewer. Every reviewer reads
   `reviewers/common.md` first.
 
+## Where this fits
+
+This skill runs at two points (stage map in `../teg-start/SKILL.md`):
+
+- **Stage B · Design → Review the plan**, when there is a plan but no
+  materials yet
+- **Stage C · Build → Review the materials**, when slides, notes, or student
+  materials exist
+
+At the start, read `progress.md` if it exists, then show a status line, for
+example:
+
+> **Stage C · Build → Review the materials** (in progress). Done: Build and rehearse. After this: Deliver and debrief.
+
+While reviewers run, say which have finished, such as "Big picture done; 3
+of 4 detailed reviews done."
+
 ## Rules
 
 1. **A review in your own context is not a fresh review.** If you cannot
@@ -252,3 +269,17 @@ Human reviewers and the version each has seen:
 - Before delivery, suggest a human review using `human_reviewers.md`. AI
   reviewers know more than most audiences, so a person who resembles the
   audience gives the best evidence before the real one.
+
+When the round is finished, update `progress.md` and end with the
+next-step block that applies:
+
+> **Review the plan complete** → `reviews/[version]/review_report.md`.
+> **Next: Build and rehearse**: make the slides and notes from the plan,
+> then rehearse aloud.
+> Say "next" to start, "status" to see the whole map, or stop here and pick
+> up later.
+
+> **Review the materials complete** → `reviews/[version]/review_report.md`.
+> **Next: Deliver and debrief**, after a human review if there is time.
+> Say "next" to start, "status" to see the whole map, or stop here and pick
+> up later.

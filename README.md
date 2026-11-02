@@ -34,20 +34,27 @@ eyes, and improve using evidence from the people you address.**
 - `starting_prompts.md`: prompts to paste into any AI chat
 - `skills/`: agent skills that carry out the model step by step
 
-## Skills
+## How it works: four stages
 
-Use them in this order. Each can also be used on its own.
+Start with **`teg-start`**. It shows this map, works out where you are, and
+hands you to the right step. Every step ends by telling you what comes next,
+and `progress.md` in your folder keeps your place between sessions.
 
-| Skill | What it does | Writes |
-| - | - | - |
-| `teg-inventory` (Part A) | For an existing deck: describes each section and reconstructs what the original was for | `inventory.md` |
-| `teg-intake` | Interviews you, one question at a time, about your goal, audience, and constraints | `brief.md` |
-| `teg-inventory` (Part B) | Recommends keep, reframe, replace, remove, or move for each section, against the new brief | `inventory.md` |
-| `teg-plan` | Builds the timed experience plan, one section at a time, with your approval | `experience_plan.md` |
-| `teg-review` | Runs fresh-context reviews (big picture first), proposes a response to each finding, and records your decisions | `reviews/`, `review_record.md` |
+| Stage | Step | Skill | Produces |
+| - | - | - | - |
+| **A. Understand** | Take stock (existing deck only) | `teg-inventory` Part A | `inventory.md` |
+| | Brief | `teg-intake` | `brief.md` |
+| **B. Design** | Adapt (existing deck only) | `teg-inventory` Part B | `inventory.md` |
+| | Plan | `teg-plan` | `experience_plan.md` |
+| | Review the plan | `teg-review` | `reviews/` |
+| **C. Build** | Build and rehearse | you build; checklist in `teg-start` | slides, notes, rehearsal |
+| | Review the materials | `teg-review` | `reviews/`, `review_record.md` |
+| **D. Deliver and learn** | Deliver and debrief | guided by `teg-start` | `debrief.md` |
 
-Starting from a topic or notes rather than a deck? Begin with `teg-intake`
-and skip the inventory.
+You can stop after any step, skip steps, or go back. The package does not
+generate slides: it helps you decide what the talk should do, plans it,
+checks it, and helps you learn from it. You build the slides in your own
+tool.
 
 The skills use the `SKILL.md` format that Claude Code, Codex, and other
 agent tools read. To use one in a plain chat window, paste in its
