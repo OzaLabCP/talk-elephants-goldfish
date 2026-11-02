@@ -1,0 +1,28 @@
+{
+  "name": "teg",
+  "version": "0.1.0",
+  "description": "Prepare, adapt, and review talks and lectures: an Elephant collaborator that interviews you and plans the talk, and fresh Goldfish reviewers that check it the way your audience will.",
+  "author": {
+    "name": "Javin Oza"
+  },
+  "homepage": "https://github.com/OzaLabCP/talk-elephants-goldfish",
+  "repository": "https://github.com/OzaLabCP/talk-elephants-goldfish",
+  "skills": "./skills/",
+  "requires_local_executor": true,
+  "interface": {
+    "displayName": "Talking with Elephants & Goldfish",
+    "shortDescription": "Plan and review talks with fresh eyes",
+    "longDescription": "An Elephant collaborator interviews you about your goal and audience, takes stock of any existing deck, and builds a timed plan with you. Goldfish reviewers check the talk in fresh contexts, seeing only what the audience sees and hears. Covers professional talks, judged competitions, and college lectures. Does not generate slides. Reviews work best with isolated subagents.",
+    "developerName": "Javin Oza",
+    "category": "Productivity",
+    "capabilities": [
+      "Interview for a talk brief",
+      "Inventory and adapt existing decks",
+      "Plan talks and lectures",
+      "Fresh-context reviews",
+      "Drift checks and debriefs"
+    ],
+    "websiteURL": "https://github.com/OzaLabCP/talk-elephants-goldfish",
+    "supportURL": "https://github.com/OzaLabCP/talk-elephants-goldfish/issues"
+  }
+}

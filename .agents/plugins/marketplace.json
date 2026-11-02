@@ -1,0 +1,17 @@
+{
+  "name": "teg",
+  "interface": {
+    "displayName": "Talking with Elephants & Goldfish"
+  },
+  "plugins": [
+    {
+      "name": "teg",
+      "source": "./",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

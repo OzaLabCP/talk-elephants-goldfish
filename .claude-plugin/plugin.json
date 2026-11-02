@@ -1,0 +1,18 @@
+{
+  "name": "teg",
+  "version": "0.1.0",
+  "description": "Prepare, adapt, and review talks and lectures: an Elephant collaborator that interviews you and plans the talk, and fresh Goldfish reviewers that check it the way your audience will.",
+  "author": {
+    "name": "Javin Oza"
+  },
+  "homepage": "https://github.com/OzaLabCP/talk-elephants-goldfish",
+  "repository": "https://github.com/OzaLabCP/talk-elephants-goldfish",
+  "keywords": [
+    "presentations",
+    "teaching",
+    "lectures",
+    "slides",
+    "review",
+    "elephant-goldfish"
+  ]
+}

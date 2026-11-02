@@ -34,6 +34,40 @@ eyes, and improve using evidence from the people you address.**
 - `starting_prompts.md`: prompts to paste into any AI chat
 - `skills/`: agent skills that carry out the model step by step
 
+## Install
+
+**Claude Code:**
+
+```bash
+claude plugin marketplace add OzaLabCP/talk-elephants-goldfish
+```
+
+```bash
+claude plugin install teg@teg
+```
+
+Or, inside Claude Code 2.1.275 or later, in one step:
+`/plugin install teg --marketplace OzaLabCP/talk-elephants-goldfish`.
+Then type `/teg:teg-start`.
+
+**Codex:**
+
+```bash
+codex plugin marketplace add OzaLabCP/talk-elephants-goldfish
+```
+
+```bash
+codex plugin add teg@teg
+```
+
+Start a new session and choose `teg-start` from the skills.
+
+**Any other tool or chat window:** paste in `skills/teg-start/SKILL.md`,
+then the `SKILL.md` of each step as you reach it.
+
+Install the whole package, not single skills: the skills refer to each
+other's files.
+
 ## How it works: four stages
 
 Start with **`teg-start`**. It shows this map, works out where you are, and

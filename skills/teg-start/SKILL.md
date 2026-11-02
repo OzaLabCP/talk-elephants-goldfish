@@ -91,8 +91,10 @@ with the steps marked.
   starts at Take stock. Anything else starts at Brief.
 - **Otherwise:** name the next step and what happens in it, in one line,
   and ask one question: start it now, or do something else.
-- **To start the next skill:** if your tool can run skills, run it (in
-  Claude Code, the slash command, such as `/teg-intake`). If not, read that
+- **To start the next skill:** if your tool can run skills, run it. In
+  Claude Code the slash command is `/teg:teg-intake` when the package is
+  installed as a plugin, or `/teg-intake` when the skills are installed on
+  their own. If not, read that
   skill's `SKILL.md` and follow it in this conversation. In a plain chat
   window, tell the person which skill file to paste in.
 - **If they jump ahead,** let them, but name what is missing and what that

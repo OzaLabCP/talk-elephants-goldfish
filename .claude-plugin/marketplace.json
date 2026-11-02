@@ -1,0 +1,14 @@
+{
+  "name": "teg",
+  "description": "Talking with Elephants & Goldfish: skills for preparing, adapting, and reviewing talks and lectures.",
+  "owner": {
+    "name": "Javin Oza"
+  },
+  "plugins": [
+    {
+      "name": "teg",
+      "source": "./",
+      "description": "Prepare, adapt, and review talks and lectures: an Elephant collaborator that interviews you and plans the talk, and fresh Goldfish reviewers that check it the way your audience will."
+    }
+  ]
+}
