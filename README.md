@@ -1,8 +1,34 @@
 # Talking with Elephants & Goldfish
 
-A model for preparing, reviewing, delivering, and improving professional
-talks and educational lectures: **develop with full context, review through
-fresh eyes, and improve using evidence from the people you address.**
+A talk succeeds or fails on what the audience understands, not on what the
+presenter meant. But it's hard to judge your own talk: you know what each
+slide is supposed to mean, so the gaps that will lose a listener are
+invisible to you.
+
+Every audience has two kinds of listeners. **Elephants** have the context
+and are paying close attention: they remember what you said ten minutes ago
+and follow the thread. **Goldfish** know less, or zoned out for a minute and
+are trying to catch up: they have only what's on the screen and what you're
+saying right now.
+
+*Talking with Elephants & Goldfish* adapts Google's Elephant–Goldfish model
+for software design to presentations and teaching, and uses AI to play
+both. An Elephant collaborator holds everything you know about the talk. It
+interviews you about your goal and audience, takes stock of any existing
+deck, and builds a timed plan with you. Goldfish reviewers check the talk in
+fresh contexts, seeing only what the audience sees and hears. They test
+whether the message comes through, whether the evidence holds up, and
+whether the slides work in the room. You decide every change.
+
+It covers professional talks, judged competitions, and college lectures,
+from a blank page or an existing deck. It works in Claude Code, Codex, or
+any chat window.
+
+> A good talk works for the Elephant who has followed every word and for the
+> Goldfish who just looked up from their phone.
+
+The organizing principle: **develop with full context, review through fresh
+eyes, and improve using evidence from the people you address.**
 
 - `talking-with-elephants-and-goldfish.md`: the full model
 - `starting_prompts.md`: prompts to paste into any AI chat
