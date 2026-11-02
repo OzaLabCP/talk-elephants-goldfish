@@ -111,3 +111,7 @@ and Google's
 project (Apache-2.0). The workflow structure and the fix, contest, escalate,
 and decline rules for review findings follow that project. The text here is
 written for talks and lectures.
+
+## License
+
+Apache License 2.0. See [LICENSE](LICENSE).
