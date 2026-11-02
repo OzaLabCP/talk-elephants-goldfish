@@ -41,9 +41,9 @@ with ✓, and skipped steps with "(skipped)".
 | **B. Design** | Adapt\* | Decide what to keep, reframe, replace, remove, or move | `teg-inventory` (Part B) | `inventory.md` |
 | | Plan | Build the timed plan, one section at a time | `teg-plan` | `experience_plan.md` |
 | | Review the plan | Fresh reviewers check the big picture and the design | `teg-review` | `reviews/` |
-| **C. Build** | Build and rehearse | You make the slides and notes from the plan, in your usual tool; then rehearse aloud, timed | Checklist from the Elephant | Slides, notes, rehearsal recording |
+| **C. Build** | Build and rehearse | You make the slides and notes from the plan, in your usual tool; a drift check compares them with the plan; then you rehearse aloud, timed | Checklist from the Elephant, plus `teg-drift` | Slides, notes, drift report, rehearsal recording |
 | | Review the materials | Fresh reviewers check comprehension, evidence, and delivery | `teg-review` | `reviews/`, `review_record.md` |
-| **D. Deliver and learn** | Deliver and debrief | Give the talk; record what happened and what to change | Debrief questions from the Elephant | `debrief.md`, updated brief |
+| **D. Deliver and learn** | Deliver and debrief | Give the talk; compare what happened with the brief and the reviews; decide what to change | `teg-debrief` | `debrief.md`, updated brief |
 
 \* Only when reusing existing material.
 
@@ -138,7 +138,7 @@ After this: [following step and skill]
 | B. Design | Adapt | | inventory.md |
 | B. Design | Plan | | experience_plan.md |
 | B. Design | Review the plan | | reviews/[version]/ |
-| C. Build | Build and rehearse | | [slides, notes, recording] |
+| C. Build | Build and rehearse | | [slides, notes, drift report, recording] |
 | C. Build | Review the materials | | reviews/[version]/, review_record.md |
 | D. Deliver and learn | Deliver and debrief | | debrief.md |
 
@@ -150,20 +150,18 @@ Each skill updates its row, "Now," and "After this" when it starts and
 when it finishes. A step in progress records where it stopped, such as "Section 3 of
 5" or "Question 6," so a new session can resume there.
 
-## Steps without their own skill
+## Build and rehearse checklist
 
-### Build and rehearse
-
-Guide the person through these, one at a time, and record progress:
+This step has no single skill. Guide the person through these, one at a
+time, and record progress:
 
 1. **Build** the slides and notes from the reviewed plan. The person does
    this in their own tool; this package does not generate slides. Offer to
    check each section against its plan segment as it is built. For
    lectures, keep student materials separate from instructor notes and
    solutions.
-2. **Check for drift** against the brief: claims that became stronger than
-   the evidence, lost qualifications, missing evidence, an ending that has
-   changed purpose.
+2. **Check for drift** with `teg-drift`: a fresh reviewer compares the
+   slides with the brief, the plan, and the recorded decisions.
 3. **Rehearse aloud** with the actual visuals, timed, including transitions,
    interaction, and the Q&A allowance. Record it if possible: the transcript
    becomes the narration for the materials review.
@@ -172,15 +170,7 @@ Guide the person through these, one at a time, and record progress:
 
 Next: Review the materials (`teg-review`).
 
-### Deliver and debrief
+## After delivery
 
-After delivery:
-
-1. Ask the debrief questions in `../teg-intake/question_bank.md`, one at a
-   time. For lectures, look at actual student work.
-2. Write `debrief.md`: what happened, timing, questions asked, confusion
-   observed, what people did afterward, what to change.
-3. Update `brief.md` and its decision record, and note in `review_record.md`
-   which human reviewers have now seen the final version.
-
-Next time this talk is given: start at Adapt, using the updated brief.
+Use `teg-debrief`. Next time this talk is given, start at Adapt, using the
+updated brief.

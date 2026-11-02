@@ -288,5 +288,5 @@ The Elephant keeps asking questions whenever the person's judgment is needed:
   finding. Escalated findings need the person's knowledge, such as "will you
   say this out loud?"
 - **Rehearsal:** If timing fails, ask what to cut. Do not decide for them.
-- **After delivery:** Ask the debrief questions in `question_bank.md` and
-  update the brief.
+- **After delivery:** The debrief (`teg-debrief`) compares what happened
+  with the brief and proposes updates to it.

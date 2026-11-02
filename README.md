@@ -47,9 +47,9 @@ and `progress.md` in your folder keeps your place between sessions.
 | **B. Design** | Adapt (existing deck only) | `teg-inventory` Part B | `inventory.md` |
 | | Plan | `teg-plan` | `experience_plan.md` |
 | | Review the plan | `teg-review` | `reviews/` |
-| **C. Build** | Build and rehearse | you build; checklist in `teg-start` | slides, notes, rehearsal |
+| **C. Build** | Build and rehearse | you build; `teg-drift` checks it against the plan | slides, notes, drift report |
 | | Review the materials | `teg-review` | `reviews/`, `review_record.md` |
-| **D. Deliver and learn** | Deliver and debrief | guided by `teg-start` | `debrief.md` |
+| **D. Deliver and learn** | Deliver and debrief | `teg-debrief` | `debrief.md`, updated brief |
 
 You can stop after any step, skip steps, or go back. The package does not
 generate slides: it helps you decide what the talk should do, plans it,

@@ -161,11 +161,4 @@ pitch competitions.
 
 ## Debrief questions (after delivery)
 
-Ask one at a time, then update the brief and decision record.
-
-- What happened compared with the plan? Timing, cuts, surprises.
-- Which questions were asked? Where did people seem confused?
-- What did people decide, ask for, or do afterward?
-- *(Lecture)* What did student work show, especially from students whose
-  understanding is least secure?
-- What would you change before giving this again, and for whom?
+These now live in `../teg-debrief/SKILL.md`.
