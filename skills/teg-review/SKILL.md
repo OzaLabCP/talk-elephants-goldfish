@@ -3,7 +3,7 @@ name: teg-review
 description: >-
   Talking with Elephants & Goldfish review. Runs fresh-context reviews of a
   talk or lesson: a big-picture review first, then design, comprehension,
-  evidence, and delivery reviews, plus misconception and assessment reviews
+  rejoining, evidence, and delivery reviews, plus misconception and assessment reviews
   for lectures and a judge review for judged talks. Builds a separate packet
   for each reviewer so private intent and answer keys stay out, collects the
   findings, proposes fix, contest, escalate, or decline for each, and records
@@ -96,6 +96,15 @@ of chosen sections, or something else.
 | Judged talk | The talk set, plus judge |
 | Small revision for a familiar audience | One focused review of the changed sections, usually comprehension |
 | Deck will also circulate without the presenter | Add a separate comprehension review of the stand-alone version |
+| Live talk or class longer than about 10 minutes | Add one or two rejoining reviews (below) |
+
+**Rejoining reviews** stand in for the listener who zoned out and just
+looked up. Each one hears the opening, misses a stretch, and rejoins
+partway through. Choose one or two rejoin points where losing the thread
+would cost the most: usually the start of the results or main argument, and
+the section after the densest explanation. Each rejoin point needs its own
+fresh reviewer. Skip this review for a deck that circulates without the
+presenter: a reader can turn back.
 
 Run a delivery review only when there are rendered slides at their real
 size, and ideally a timed rehearsal recording or transcript. Without them,
@@ -147,6 +156,8 @@ in parallel where your tool allows, except for these dependencies:
   the phase 1 attempt plus the answer key and rubric.
 - **Comprehension phase 2** runs only if Step 7 finds a gap, with a new
   reviewer.
+- **Rejoining reviews** can run in parallel with the others, one fresh
+  reviewer per rejoin point.
 
 Give each reviewer this prompt and nothing more:
 

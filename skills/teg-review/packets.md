@@ -15,6 +15,7 @@ Those files are instructions, not packet materials.
 | **Comprehension** | A description of the participants' background; exactly what participants encounter: rendered slides, narration (for a live talk), handouts, and any objectives or agenda they are shown | The brief, the outcome statement, private notes and rationale, answer keys, slides that will not be shown |
 | **Comprehension, phase 2** | The comprehension packet, the phase 1 reconstruction, and the intended message | The rest of the brief and the preparation conversation |
 | **Evidence** | Claims as presented (slides plus narration or script), sources, data, stated qualifications, the brief's evidence section | Explanations offered only in conversation |
+| **Rejoining** | The comprehension packet with the missed stretch removed: the opening section, then everything from the rejoin point onward (slides and narration) | The missed stretch, the brief, private notes, and anything else kept out of comprehension |
 | **Misconceptions** | The comprehension packet, plus the objectives | Instructor notes, answer keys, rationale |
 | **Assessment, phase 1** | Student tasks exactly as students receive them, the students' background, the conditions (time, permitted resources), and the rubric only if students see it | Answer key, instructor notes, a rubric students do not see |
 | **Assessment, phase 2** | Tasks, the phase 1 attempt, answer key, rubric, objectives | The preparation conversation |
@@ -85,5 +86,6 @@ Narration: [included (source) / not included: mark findings narration might reso
 Format: [live talk / recorded / circulated without the presenter / class session]
 Length: [speaking minutes] + [Q&A or activity minutes]
 Review in sections: [yes, in this order: ... / no]
+Rejoins at: [location, and roughly how many minutes were missed / not applicable]
 Recheck of: [finding IDs, or "none"]
 ```
