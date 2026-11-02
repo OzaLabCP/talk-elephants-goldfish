@@ -39,7 +39,7 @@ with ✓, and skipped steps with "(skipped)".
 | **A. Understand** | Take stock\* | Describe the existing deck and what it was originally for | `teg-inventory` (Part A) | `inventory.md` |
 | | Brief | An interview about your goal, audience, and constraints | `teg-intake` | `brief.md` |
 | **B. Design** | Adapt\* | Decide what to keep, reframe, replace, remove, or move | `teg-inventory` (Part B) | `inventory.md` |
-| | Plan | Build the timed plan, one section at a time | `teg-plan` | `experience_plan.md` |
+| | Plan | Draft the timed plan for you to mark up, or build it step by step | `teg-plan` | `experience_plan.md` |
 | | Review the plan | Fresh reviewers check the big picture and the design | `teg-review` | `reviews/` |
 | **C. Build** | Build and rehearse | You make the slides and notes from the plan, in your usual tool; a drift check compares them with the plan; then you rehearse aloud, timed | Checklist from the Elephant, plus `teg-drift` | Slides, notes, drift report, rehearsal recording |
 | | Review the materials | Fresh reviewers check comprehension, evidence, and delivery | `teg-review` | `reviews/`, `review_record.md` |
@@ -86,7 +86,8 @@ with the steps marked.
 
 ## Step 3: Hand off to the next step
 
-- **Starting fresh:** ask one question: "What do you have so far: a topic,
+- **Starting fresh:** if the person's first message already says what they
+  have, skip this question. Otherwise ask one question: "What do you have so far: a topic,
   notes, an outline, or an existing deck?" An existing deck or recording
   starts at Take stock. Anything else starts at Brief.
 - **Otherwise:** name the next step and what happens in it, in one line,

@@ -71,6 +71,14 @@ and the revised material, so the reviewer can confirm whether it is
 resolved. Use a new reviewer for any recheck that depends on freshness, such
 as comprehension.
 
+To settle a **doubtful comprehension finding**, give a new fresh reviewer
+the same comprehension packet plus one added instruction: "At [location],
+explain what [term or step] means to these participants, and whether they
+could follow it." Do not include the original finding, so the recheck is
+independent. If the recheck follows it without difficulty, that is evidence
+for contesting the finding. A reader who resembles the audience is stronger
+evidence still.
+
 ## Manifest
 
 Each packet folder has a `manifest.md`:

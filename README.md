@@ -34,9 +34,9 @@ eyes, and improve using evidence from the people you address.**
 - `starting_prompts.md`: prompts to paste into any AI chat
 - `skills/`: agent skills that carry out the model step by step
 
-## Install
+## Quick start (about 5 minutes)
 
-**Claude Code:**
+**1. Install it once.** In a terminal:
 
 ```bash
 claude plugin marketplace add OzaLabCP/talk-elephants-goldfish
@@ -46,11 +46,53 @@ claude plugin marketplace add OzaLabCP/talk-elephants-goldfish
 claude plugin install teg@teg
 ```
 
-Or, inside Claude Code 2.1.275 or later, in one step:
+Inside Claude Code 2.1.275 or later, one command does both:
 `/plugin install teg --marketplace OzaLabCP/talk-elephants-goldfish`.
-Then type `/teg:teg-start`.
 
-**Codex:**
+To take stock of an existing PowerPoint deck, the package uses Python 3
+with `python-pptx` (`pip install python-pptx`). LibreOffice is optional; it
+lets the package render slide images so reviewers can see layout.
+
+**2. Make a folder for the talk.** Put any existing material in it: a deck,
+notes, an outline. The package writes its files there (`brief.md`,
+`experience_plan.md`, `progress.md`, and so on).
+
+**3. Start Claude Code in that folder and send a first message,** for
+example:
+
+```text
+/teg:teg-start I'm adapting my 20-minute conference talk, talk.pptx, for a campus research showcase: 8 minutes, faculty and staff from every college.
+```
+
+Saying what you have and who it's for saves a question. `/teg:teg-start` on
+its own works too.
+
+**4. Expect a first response like this:**
+
+> You're at the start, with an existing deck to adapt. First I'll take stock
+> of `talk.pptx`: what each section does and what the original talk was
+> for. Then I'll interview you about the new audience. I've saved your
+> place in `progress.md`.
+>
+> **Stage A · Understand → Take stock** (not started). After this: Brief.
+>
+> | Stage | Steps |
+> | - | - |
+> | A. Understand | ▶ Take stock · Brief |
+> | B. Design | Adapt · Plan · Review the plan |
+> | C. Build | Build and rehearse · Review the materials |
+> | D. Deliver and learn | Deliver and debrief |
+>
+> You can stop after any step and pick up later.
+>
+> Start taking stock of `talk.pptx` now?
+
+Reply "yes" and it begins. Every step ends by naming the next one, and you
+can say "status" at any time to see the map.
+
+**Codex:** install with these two commands, then start a new session in
+the talk folder and send `Use the teg-start skill.` followed by what you
+have and who it's for.
 
 ```bash
 codex plugin marketplace add OzaLabCP/talk-elephants-goldfish
@@ -60,10 +102,9 @@ codex plugin marketplace add OzaLabCP/talk-elephants-goldfish
 codex plugin add teg@teg
 ```
 
-Start a new session and choose `teg-start` from the skills.
-
-**Any other tool or chat window:** paste in `skills/teg-start/SKILL.md`,
-then the `SKILL.md` of each step as you reach it.
+**Any other tool or chat window:** paste in the contents of
+`skills/teg-start/SKILL.md`, then your first message. Paste each step's
+`SKILL.md` as you reach it.
 
 Install the whole package, not single skills: the skills refer to each
 other's files.

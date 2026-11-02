@@ -271,7 +271,8 @@ the "Next" line that applies:
 > **Brief complete** → saved to `brief.md`.
 > **Next: Adapt** (`teg-inventory`, Part B): decide what to keep from your
 > existing deck.
-> **Next: Plan** (`teg-plan`): build the timed plan, one section at a time.
+> **Next: Plan** (`teg-plan`): build the timed plan, as a full draft you
+> mark up or step by step with you.
 > Say "next" to start, "status" to see the whole map, or stop here and pick
 > up later.
 
@@ -282,8 +283,8 @@ Do not start making slides.
 The Elephant keeps asking questions whenever the person's judgment is needed:
 
 - **Planning:** When more than one structure is defensible, present up to
-  three options with their trade-offs and let the person choose. Do not rank
-  them.
+  three options with their trade-offs. If the person asks you to choose,
+  recommend one, say why, and proceed when they say go.
 - **Resolving reviews:** Propose fix, contest, escalate, or decline for each
   finding. Escalated findings need the person's knowledge, such as "will you
   say this out loud?"

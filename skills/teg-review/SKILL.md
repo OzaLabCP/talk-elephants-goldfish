@@ -191,17 +191,25 @@ corrections first). For each finding, propose one response:
   source, or recorded decision the reviewer could have checked.
 - **Escalate:** the finding depends on something only the presenter can
   confirm, such as what will be said aloud, an organizer's requirement, or
-  what students showed in an earlier session.
+  what students showed in an earlier session; or it is a comprehension
+  finding you doubt, which a recheck could settle (see the rules below).
 - **Decline:** an optional refinement. Record it without changing anything.
 
 Apply these rules:
 
 - A contest needs evidence the reviewer could have read. "That was
   intentional" is not evidence.
-- Do not contest a comprehension gap. If the reviewer had what participants
-  will have and could not follow it, propose a fix. If the packet lacked
-  something participants will have, such as narration, escalate it and
-  propose a repeat review with the missing material.
+- Investigate a comprehension gap before dismissing it. A reported gap is
+  a signal, not proof: the reviewer may have misread, or may lack knowledge
+  this audience has. Do not contest it on your own reading or on the
+  presenter's confidence alone. If you doubt it, escalate it and propose a
+  check that can settle it: an independent recheck by a new fresh reviewer
+  (see "Recheck packets" in `packets.md`), or feedback from a person who
+  resembles the audience (`human_reviewers.md`). Contest it only with that
+  evidence. If the recheck also finds the gap, propose a fix.
+- If the packet lacked something participants will have, such as
+  narration, escalate the finding and propose a repeat review with the
+  missing material.
 - Add context for the audience, not for the reviewer. If only a reviewer
   without the audience's background needs an explanation, escalate instead
   of adding it.
