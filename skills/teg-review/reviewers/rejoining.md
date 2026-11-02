@@ -30,13 +30,23 @@ At the moment you rejoin:
 For lectures, read as a student who missed part of an explanation and is
 now asked to take part in an activity. Can they still attempt it?
 
+## Scope
+
+Focus on what a rejoining listener needs. If you notice a problem every
+listener would have, such as an unsupported claim, report it only if it is
+consequential, and start its Issue line with "Affects every listener," so
+it can be merged with other reviewers' findings. Rate every finding with
+the importance definitions in `common.md`.
+
 ## First section of your report: "Rejoining at [location]"
 
 1. What you could tell at the moment you rejoined (one or two sentences).
 2. The main message or objective as you understand it by the end.
-3. A table:
+3. A table of what you needed and did not get:
 
-| Needed from the part I missed | First used at | Restated? |
+| Used from here on but not explained in what I heard | First used at | Explained later? |
+
+4. Places that let you back in, and places where one is missing.
 
 Then report consequential gaps as findings in the usual format. A
 listener who rejoins at the results and cannot recover the main message is

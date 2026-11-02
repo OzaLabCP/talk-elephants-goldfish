@@ -24,6 +24,10 @@ you show what someone without that background will notice or miss.
   because of knowledge they lack, say so.
 - **If narration is not included,** you are seeing slides without the
   speaker. Mark each finding that the spoken explanation might resolve.
+  If the full narration is included, mark that field "not applicable."
+- **If the packet contradicts itself,** for example a script far shorter
+  than the stated length, report it under Limits and carry on with the
+  most reasonable reading.
 
 ## What to report
 
@@ -49,7 +53,7 @@ you show what someone without that background will notice or miss.
 ## Report format
 
 ```markdown
-# [Reviewer] review, [version]
+# [Reviewer] review, [version from the manifest]
 
 ## What I received
 [files read; anything opened outside the packet]
