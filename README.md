@@ -71,8 +71,7 @@ its own works too.
 
 > You're at the start, with an existing deck to adapt. First I'll take stock
 > of `talk.pptx`: what each section does and what the original talk was
-> for. Then I'll interview you about the new audience. I've saved your
-> place in `progress.md`.
+> for. Then I'll interview you about the new audience.
 >
 > **Stage A · Understand → Take stock** (not started). After this: Brief.
 >
@@ -83,7 +82,9 @@ its own works too.
 > | C. Build | Build and rehearse · Review the materials |
 > | D. Deliver and learn | Deliver and debrief |
 >
-> You can stop after any step and pick up later.
+> This package plans and checks your talk; you build the slides yourself.
+> You can stop after any step and pick up later: `progress.md` keeps your
+> place.
 >
 > Start taking stock of `talk.pptx` now?
 

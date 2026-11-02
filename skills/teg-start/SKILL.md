@@ -30,9 +30,19 @@ skills do the work.
 
 ## The stage map
 
-Show this map the first time you meet the person, and whenever they ask for
-status. In the Step column, mark the current step with ▶, finished steps
-with ✓, and skipped steps with "(skipped)".
+Show the person the **short map**. In the Steps column, mark the current
+step with ▶, finished steps with ✓, and skipped steps with "(skipped)".
+
+| Stage | Steps |
+| - | - |
+| A. Understand | Take stock · Brief |
+| B. Design | Adapt · Plan · Review the plan |
+| C. Build | Build and rehearse · Review the materials |
+| D. Deliver and learn | Deliver and debrief |
+
+Take stock and Adapt apply only when reusing existing material.
+
+Show the **full map** only if the person asks what the steps involve:
 
 | Stage | Step | What happens | Skill | Produces |
 | - | - | - | - | - |
@@ -46,13 +56,6 @@ with ✓, and skipped steps with "(skipped)".
 | **D. Deliver and learn** | Deliver and debrief | Give the talk; compare what happened with the brief and the reviews; decide what to change | `teg-debrief` | `debrief.md`, updated brief |
 
 \* Only when reusing existing material.
-
-This package does not make slides. It helps you decide what the talk should
-do, plans it, checks it, and helps you learn from it. You build the slides
-yourself, in whatever tool you use, or with another tool of your choice.
-
-Tell the person, once: they can stop after any step and pick up later in a
-new session, skip a step, or go back. `progress.md` keeps their place.
 
 ## Step 1: Find where things stand
 
@@ -76,22 +79,44 @@ new session, skip a step, or go back. `progress.md` keeps their place.
    adaptation section, mark Take stock and Adapt as skipped, and mention
    that in the handoff in case they do have a deck elsewhere. If the files
    leave anything else unclear, ask one question.
-3. Write or update `progress.md`.
+3. Write or update `progress.md`. For a working title, use what the
+   person called the talk, or else the deck's file name without its
+   extension. If their first message
+   gave facts the brief will need (length, audience, occasion), record them
+   under "Notes for the next session" so the interview does not ask again.
 
 ## Step 2: Show where they are
 
-Start with one or two plain sentences answering where they are. Then show
-the status line (format below). The first time, also show the stage map
-with the steps marked.
+The first message to a new person has this shape, and nothing more:
+
+> [One to three plain sentences: where they are, what happens first, and
+> any facts you recorded from their first message.]
+>
+> **Stage A · Understand → Take stock** (not started). After this: Brief.
+>
+> [The short map, with the current step marked.]
+>
+> This package plans and checks your talk; you build the slides yourself.
+> You can stop after any step and pick up later: `progress.md` keeps your
+> place.
+>
+> [One question: start the next step now? This is the Step 3 question.]
+
+In the status line, leave out "Done:" when nothing is done yet. Later,
+when the person asks for status, show the plain sentences, the status
+line, and the short map; the two sentences about slides and stopping are
+for the first meeting only.
 
 ## Step 3: Hand off to the next step
 
 - **Starting fresh:** if the person's first message already says what they
-  have, skip this question. Otherwise ask one question: "What do you have so far: a topic,
-  notes, an outline, or an existing deck?" An existing deck or recording
-  starts at Take stock. Anything else starts at Brief.
-- **Otherwise:** name the next step and what happens in it, in one line,
-  and ask one question: start it now, or do something else.
+  have, do not ask; go to the next bullet. Otherwise ask one question:
+  "What do you have so far: a topic, notes, an outline, or an existing
+  deck?" An existing deck or recording starts at Take stock. Anything else
+  starts at Brief.
+- **Then:** ask one question: start the next step now, or do something
+  else. Use plain step names with the person ("Take stock"); skill names
+  are for you.
 - **To start the next skill:** if your tool can run skills, run it. In
   Claude Code the slash command is `/teg:teg-intake` when the package is
   installed as a plugin, or `/teg-intake` when the skills are installed on
@@ -131,12 +156,12 @@ on or about to start, with its state in parentheses. When a step finishes,
 # Progress: [working title]
 
 Updated: [date]
-Now: [Stage] → [Step] ([not started / in progress: where it stopped])
+Now: [Stage] → [Step] ([status])
 After this: [following step and skill]
 
 | Stage | Step | Status | File |
 | - | - | - | - |
-| A. Understand | Take stock | done / skipped (no existing material) / not started | inventory.md (— if skipped) |
+| A. Understand | Take stock | [status] | inventory.md (— if skipped) |
 | A. Understand | Brief | | brief.md |
 | B. Design | Adapt | | inventory.md |
 | B. Design | Plan | | experience_plan.md |
@@ -146,8 +171,12 @@ After this: [following step and skill]
 | D. Deliver and learn | Deliver and debrief | | debrief.md |
 
 ## Notes for the next session
-- [anything in progress, open questions, decisions pending]
+- [anything in progress, open questions, decisions pending, facts the
+  person has already given]
 ```
+
+Status is one of: not started; in progress: [where it stopped]; done;
+skipped ([reason]).
 
 Each skill updates its row, "Now," and "After this" when it starts and
 when it finishes. A step in progress records where it stopped, such as "Section 3 of
