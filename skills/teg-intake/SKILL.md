@@ -24,6 +24,10 @@ probes.
    or feedback.
 2. If `brief.md` already exists, read it. Ask only about gaps and about what
    has changed since it was written.
+   If an existing deck is being adapted and `inventory.md` exists, read its
+   reconstructed original brief. If there is a deck but no inventory,
+   suggest running Part A of `teg-inventory` first: its reconstruction
+   answers many intake questions about the original.
 3. Post a short **What I know so far** (8 lines or fewer) with three parts:
    - **Stated:** facts the person or the materials give directly.
    - **Inferred:** your guesses, labeled as guesses. An existing deck shows
@@ -244,9 +248,9 @@ Version: [date]; adapted from: [earlier brief or deck, if any]
 
 ## After the brief
 
-Tell the person where `brief.md` is. Suggest the next step: an inventory of
-the existing deck if there is one, otherwise the experience plan. Do not
-start making slides.
+Tell the person where `brief.md` is. Suggest the next step: if existing
+material is being adapted, Part B of the inventory (`teg-inventory`);
+otherwise the experience plan (`teg-plan`). Do not start making slides.
 
 ## Questions in later steps
 
