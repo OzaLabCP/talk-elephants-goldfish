@@ -231,18 +231,43 @@ Summary: [n] essential, [n] meaningful, [n] optional; [n] escalated
 
 ## Step 9: The presenter decides
 
-In chat, show:
+Put everything to be decided in one chat message, in this order:
 
-1. A decision table, one row per finding: ID, location, the proposed change
-   in one line, importance, proposed response. If there are more than about
-   25 rows, show the essential and escalated findings in full and group the
-   rest by section, one line each.
-2. The escalated questions, numbered, each answerable in a word or a line.
+1. **A one-line summary:** the number of findings by importance, and how
+   many need the presenter's answer.
+2. **A decision table,** one row per finding, essential findings first: ID,
+   location, the proposed change in one line, importance, proposed response.
+   For an escalated finding, the response column says "see Q1," "see Q2,"
+   and so on. If there are more than about 25 rows, show the essential and
+   escalated findings in full and group the rest by section, one line each.
+3. **Numbered questions:** first the escalated questions, each naming its
+   finding and answerable in a word or a line; then, last, "Reply with the
+   IDs you'd change or reject; everything else is accepted."
+4. **An example reply,** in italics, using this message's own numbers,
+   plus the shortcut "all good" to accept everything.
 
-End with one question, numbered after the escalated questions so it comes
-last: "Reply with the IDs you'd change or reject; everything else is
-accepted." Offer going through findings one at a time only if the presenter
-asks for it.
+All the questions sit together at the end, just above where the presenter
+types, so one short reply answers them all. Offer going through findings
+one at a time only if the presenter asks for it.
+
+For example:
+
+> **Review of v2: 6 findings.** 2 essential, 3 meaningful, 1 optional. 2 need your answer.
+>
+> | ID | Where | Proposed change | Importance | Response |
+> | - | - | - | - | - |
+> | F1 | Slide 5 | Replace "works for all California vineyards" with "worked at our site; the trial tests whether it holds elsewhere" | Essential | Fix |
+> | F2 | Slide 4 | Add error bars and say the yield numbers aloud | Essential | Fix |
+> | F3 | Slide 3 | Define VWC and MAD in plain words | Meaningful | see Q1 |
+> | F4 | Slide 6 | Name the partner roles you need | Meaningful | Fix |
+> | F6 | Slide 4 | "Conventional" means calendar watering | Meaningful | see Q2 |
+> | F5 | Slide 2 | Connect 600,000 acres to the 18% | Optional | Decline |
+>
+> 1. F3: Will you define VWC and MAD out loud, or should the slide do it?
+> 2. F6: Do you say "calendar watering" when this slide is up?
+> 3. Reply with the IDs you'd change or reject; everything else is accepted.
+>
+> *Example reply: "1 out loud · 2 no · 3 reject F5." Or "all good" to accept everything.*
 
 For each ID the presenter names, ask what they want instead if it is not
 clear: a different response or a different fix. Record every decision and

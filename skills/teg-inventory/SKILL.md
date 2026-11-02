@@ -182,14 +182,17 @@ the presenter.
 
 ### Step 10: Decide
 
-In chat, show a table with one row per section: section, slides,
-recommended action, and a one-line reason. Counts alone ("4 keep, 3
-reframe") are not something anyone can decide on. Below the table, list the
-missing items and the time check, one line each.
+In chat, start with a one-line summary (for example, "9 sections: 4 keep,
+3 reframe, 1 replace, 1 move; 2 missing items; 3 minutes over"). Then show
+a table with one row per section: section, slides, recommended action, and
+a one-line reason. Counts alone are not something anyone can decide on.
+Below the table, list the missing items and the time check, one line each.
 
 End with one question: "Reply with the sections you'd change; everything
-else is accepted." Offer going through the sections one at a time only if
-the presenter asks for it.
+else is accepted." Follow it with an example reply in italics, such as
+*"Results: keep instead of reframe," or "all good" to accept everything.*
+Offer going through the sections one at a time only if the presenter asks
+for it.
 
 Record each decision and its reason. Add consequential decisions to the
 decision record in `brief.md`.
