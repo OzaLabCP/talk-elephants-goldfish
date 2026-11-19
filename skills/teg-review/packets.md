@@ -21,7 +21,7 @@ Those files are instructions, not packet materials.
 | **Assessment, phase 2** | Tasks, the phase 1 attempt, answer key, rubric, objectives | The preparation conversation |
 | **Story and messaging, plan stage** | The experience plan: segments with audience questions, takeaways, transitions, and timing; the opening and ending | The brief, the preparation conversation |
 | **Story and messaging, materials stage** | The comprehension packet: exactly what the audience encounters, with narration | The brief, the outcome statement, private notes |
-| **Slide design** | Rendered slides (PDF or images), the deck extract with its measurements, and the room and screen (seats, screen size, distance to the back row) | The brief, private notes; narration is not needed |
+| **Slide design** | Rendered slides (PDF or images), the deck extract with its measurements (run with the room options), and the room and screen (seats, image width and height, distance to the back row) | The brief, private notes; narration is not needed |
 | **Delivery** | A rehearsal recording or timestamped transcript, the rendered slides, the timing plan, the setting (room, remote or hybrid); for lectures, activity instructions and class conditions | Claims that the outline proves pacing |
 | **Copyedit and consistency** | All text participants see or hear: slide text and rendered slides, narration or script, handouts, references, and the style guide if one applies | The brief, which this review does not need |
 | **Judge** | What judges see and hear (as for comprehension), the rubric and rules, the panel's background | The brief, rationale, and anything about other entries |
@@ -97,7 +97,7 @@ Participants' background: [description as above, or "not applicable"]
 Narration: [included (source) / not included: mark findings narration might resolve]
 Format: [live talk / recorded / circulated without the presenter / class session]
 Length: [speaking minutes] + [Q&A or activity minutes]
-Room and screen: [seats, screen size, distance to the back row; or "remote" / "not applicable"]
+Room and screen: [seats; projected image width and height, or width and shape (16:9 or 4:3); distance to the back row; or "remote" / "not applicable"]
 Stage: [plan / materials / final polish]
 Review in sections: [yes, in this order: ... / no]
 Rejoins at: [location, and roughly how many minutes were missed / not applicable]

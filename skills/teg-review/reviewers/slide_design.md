@@ -11,20 +11,40 @@ need the narration.
 
 The deck extract reports, for each slide, the smallest text size, the word
 count, possible overlaps and off-slide shapes, and picture resolution.
-These are evidence: cite them ("14 pt source line on slide 7"). Check each
-flag against the slide image before reporting it. A flagged overlap may be
-intentional, such as a caption placed over a photo.
+When the room was given, it also reports how far away the smallest text
+can be read, and the minimum size for the back row. That estimate uses a
+common display-legibility guideline (capital letters at least 16 minutes
+of arc tall at the viewer's eye). Use it as your rule for "readable from
+the back," so reviews are comparable.
 
-Sizes marked ≈ are inherited or shrunk automatically and may be slightly
-off. The images were rendered with LibreOffice, so fonts and spacing can
-differ a little from PowerPoint. If you received only images, estimate
-sizes and say that you did.
+These are evidence: cite them ("14 pt source line on slide 7, readable to
+about 32 ft"). Check each flag against the slide image before reporting
+it. A flagged overlap may be intentional, such as a caption placed over a
+photo.
+
+Know what the measurements miss:
+
+- **Text inside pictures** (screenshots, pasted charts) is not measured.
+  Judge it from the image and the picture resolution flags; it can be far
+  smaller than the "smallest text."
+- **Sizes marked ≈** are inherited or shrunk automatically. Automatic
+  shrinking can differ between PowerPoint and LibreOffice, which rendered
+  the images, so line breaks and overlaps may differ in PowerPoint. Say so
+  when it matters.
+- If you received only images, estimate sizes and say that you did.
+
+You may make enlarged crops or measurements of the slide images in a
+scratch folder. Never change the packet.
 
 ## Check
 
-- **Text size for the room:** Judge the smallest text against the room and
-  screen in the manifest. If the manifest gives none, state the room you
-  assumed.
+- **Text size for the room:** Judge text against the room and screen in
+  the manifest, using the extract's readable distance. If the screen's
+  shape is not given and the slide shape could differ from it (a 4:3 deck
+  on a 16:9 screen shows about 25% smaller), say so. If the manifest gives
+  no room, state the room you assumed. Reference text, such as source
+  lines, may be smaller, but should be readable at least to the middle of
+  the room or provided elsewhere (a handout or final slide).
 - **Density:** Too many words, dense screenshots (flagged as large images
   shown small), tables with more cells than anyone can read in the time.
 - **Layout problems:** Overlapping, cut-off, or off-slide elements;
@@ -34,7 +54,8 @@ sizes and say that you did.
 - **Charts:** Readable axis labels, units, and legends; a reasonable number
   of series; the point of the chart visible.
 - **Focus:** Can a viewer tell what each slide is for and where to look
-  first?
+  first? Whether the slide's point is *visible* is in scope; whether it is
+  *correct* belongs to the evidence reviewer.
 - **Consistency:** Fonts, colors, title placement, and alignment across
   slides.
 - **Images:** Blurry or stretched images (flagged as low resolution);
@@ -45,9 +66,27 @@ sizes and say that you did.
 
 Do not judge content, story, or evidence; other reviewers do that.
 
+## Importance for design problems
+
+- **Essential correction:** a slide's key content cannot be read or seen
+  from any seat, or is hidden or cut off.
+- **Meaningful improvement:** text the audience must read is readable only
+  from part of the room; clutter, weak contrast, or layout problems that
+  slow reading.
+- **Optional refinement:** polish, such as alignment or small
+  inconsistencies.
+
+Mark "May be covered by narration" as "not applicable": a speaker cannot
+make a slide easier to see.
+
 ## First section of your report: "Slide by slide"
 
-| Slide | Readable from the back? yes / partly / no | Main problem | Fix in one line |
+| Slide | Readable from the back? | Main problem | Fix in one line |
+
+- **Yes:** everything the audience must read can be read from the back row.
+- **Partly:** some of it can be read only from part of the room.
+- **No:** key content cannot be read or seen from the back, for any reason
+  (too small, hidden, cut off, unreadable picture).
 
 Then report consequential problems as findings in the usual format. Group a
 problem that repeats across slides into one finding ("slides 4, 7, and 9:

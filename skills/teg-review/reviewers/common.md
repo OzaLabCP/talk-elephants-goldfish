@@ -24,7 +24,8 @@ you show what someone without that background will notice or miss.
   because of knowledge they lack, say so.
 - **If narration is not included,** you are seeing slides without the
   speaker. Mark each finding that the spoken explanation might resolve.
-  If the full narration is included, mark that field "not applicable."
+  If the full narration is included, or your review does not depend on
+  narration (slide design, copyedit), mark that field "not applicable."
 - **If the packet contradicts itself,** for example a script far shorter
   than the stated length, report it under Limits and carry on with the
   most reasonable reading.
@@ -38,7 +39,8 @@ you show what someone without that background will notice or miss.
   disagree, state the competing reasoning.
 - Separate what the materials support from what you are inferring.
 - Use plain language. Do not praise the work or the author.
-- Do not edit any materials. You are read-only.
+- Do not edit any materials. You are read-only. You may make working
+  copies, such as enlarged crops of slide images, in a scratch folder.
 
 ## Importance
 

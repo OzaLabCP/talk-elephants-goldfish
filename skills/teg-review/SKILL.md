@@ -112,9 +112,10 @@ fresh reviewer. Skip this review for a deck that circulates without the
 presenter: a reader can turn back.
 
 **Slide design** needs rendered slides and the deck measurements (Step 4),
-plus the room and screen: how many seats, how large the screen, how far the
-back row sits. Take these from the brief, or ask. It can run before any
-rehearsal.
+plus the room and screen: how many seats, the projected image's width and
+height (or width and shape, 16:9 or 4:3), and how far the back row sits.
+Take these from the brief, or ask; rough numbers are fine. It can run
+before any rehearsal.
 
 **Delivery** needs a timed rehearsal recording or transcript. Without one,
 skip it and say why.
@@ -141,8 +142,11 @@ For a live talk, comprehension and delivery depend on what will be said.
 Follow `packets.md`.
 
 1. For a PowerPoint deck, run `../teg-inventory/scripts/extract_deck.py`
-   with `--render`. It produces the slide images, the slide text, and the
-   measurements the slide design reviewer needs.
+   with `--render`, and with the room when you know it:
+   `--screen-width-ft 12 --screen-height-ft 6.75 --back-row-ft 70`. It
+   produces the slide images, the slide text, and the measurements the
+   slide design reviewer needs, including how far away each slide's
+   smallest text can be read.
 2. For each reviewer, create `reviews/<version>/packets/<reviewer>/` and
    copy in only the permitted files. Add a `manifest.md` that lists the
    files, describes the participants' background, gives the format, length,
