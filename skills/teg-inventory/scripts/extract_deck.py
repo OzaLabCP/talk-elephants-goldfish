@@ -3,8 +3,10 @@
 
 Writes one Markdown file with, for every slide: number, hidden flag, layout,
 title, visible text, tables, charts (type, series, categories), pictures
-(with alt text), and speaker notes. Optionally renders the slides to a PDF
-and PNG images so a reviewer can see layout and type size.
+(with alt text), speaker notes, and measurements for slide design review:
+smallest text size, word count, overlapping or off-slide shapes, and picture
+resolution. Optionally renders the slides to a PDF and PNG images so a
+reviewer can see layout.
 
 Usage:
     python3 extract_deck.py DECK.pptx OUT_DIR [--render]
@@ -77,6 +79,186 @@ def alt_text(shape):
         return ""
 
 
+NS = {"a": "http://schemas.openxmlformats.org/drawingml/2006/main",
+      "p": "http://schemas.openxmlformats.org/presentationml/2006/main"}
+EMU_PER_INCH = 914400
+SMALL_TEXT_PT = 18      # heuristic: check text below this size against the room
+MANY_WORDS = 75         # heuristic: slides above this word count are text-heavy
+HIGH_PPI = 300          # heuristic: a large image shown small (a shrunk screenshot?)
+LOW_PPI = 96            # heuristic: a small image stretched (may look blurry)
+
+
+def _lvl_size(container, level):
+    """Size in points from a:lvlNpPr/a:defRPr inside a list style, if set."""
+    if container is None:
+        return None
+    node = container.find(f"a:lvl{level + 1}pPr/a:defRPr", NS)
+    if node is not None and node.get("sz"):
+        return int(node.get("sz")) / 100
+    return None
+
+
+def _placeholder_chain(shape, slide):
+    """Layout and master placeholders that this placeholder inherits from."""
+    chain = []
+    try:
+        idx = shape.placeholder_format.idx
+        ptype = shape.placeholder_format.type
+    except Exception:
+        return chain
+    layout = slide.slide_layout
+    for ph in layout.placeholders:
+        if ph.placeholder_format.idx == idx or (idx != 0 and ph.placeholder_format.type == ptype):
+            chain.append(ph)
+            break
+    for ph in layout.slide_master.placeholders:
+        if ph.placeholder_format.type == ptype:
+            chain.append(ph)
+            break
+    return chain
+
+
+def _master_style(shape, slide):
+    master = slide.slide_layout.slide_master._element
+    styles = master.find("p:txStyles", NS)
+    if styles is None:
+        return None
+    name = "p:otherStyle"
+    if shape.is_placeholder:
+        t = str(shape.placeholder_format.type)
+        name = "p:titleStyle" if "TITLE" in t and "SUB" not in t else "p:bodyStyle"
+    return styles.find(name, NS)
+
+
+def _font_scale(text_frame):
+    node = text_frame._txBody.find("a:bodyPr/a:normAutofit", NS)
+    if node is not None and node.get("fontScale"):
+        return int(node.get("fontScale")) / 100000
+    return 1.0
+
+
+def text_sizes(shape, slide, prs):
+    """(size_pt, exact, text) for each non-empty run in a shape's text frame."""
+    results = []
+    if not shape.has_text_frame:
+        return results
+    tf = shape.text_frame
+    scale = _font_scale(tf)
+    own_list = tf._txBody.find("a:lstStyle", NS)
+    chain = _placeholder_chain(shape, slide) if shape.is_placeholder else []
+    master_style = _master_style(shape, slide)
+    default_style = prs._element.find("p:defaultTextStyle", NS)
+    for para in tf.paragraphs:
+        level = para.level
+        para_default = para._p.find("a:pPr/a:defRPr", NS)
+        for run in para.runs:
+            if not run.text.strip():
+                continue
+            size, exact = None, True
+            if run.font.size is not None:
+                size = run.font.size.pt
+            elif para_default is not None and para_default.get("sz"):
+                size = int(para_default.get("sz")) / 100
+            else:
+                exact = False
+                candidates = [own_list]
+                candidates += [ph.text_frame._txBody.find("a:lstStyle", NS) for ph in chain if ph.has_text_frame]
+                candidates += [master_style, default_style]
+                for c in candidates:
+                    size = _lvl_size(c, level)
+                    if size:
+                        break
+                if not size:
+                    size = 18.0
+            results.append((round(size * scale, 1), exact and scale == 1.0, run.text.strip()))
+    return results
+
+
+def _bbox(shape):
+    if None in (shape.left, shape.top, shape.width, shape.height):
+        return None
+    return (shape.left, shape.top, shape.left + shape.width, shape.top + shape.height)
+
+
+def measurements(slide, prs):
+    """Lines describing text size, word count, overlaps, off-slide shapes, and pictures."""
+    sw, sh = prs.slide_width, prs.slide_height
+    sizes, words = [], 0
+    for shape in walk(slide.shapes):
+        for size, exact, text in text_sizes(shape, slide, prs):
+            sizes.append((size, exact, shape.name, text))
+            words += len(text.split())
+        if getattr(shape, "has_table", False) and shape.has_table:
+            for row in shape.table.rows:
+                for cell in row.cells:
+                    for para in cell.text_frame.paragraphs:
+                        for run in para.runs:
+                            if run.text.strip():
+                                size = run.font.size.pt if run.font.size is not None else 18.0
+                                sizes.append((size, run.font.size is not None, shape.name, run.text.strip()))
+                                words += len(run.text.split())
+    lines, flags = [], []
+    smallest = None
+    if sizes:
+        smallest = min(sizes, key=lambda x: x[0])
+        mark = "" if smallest[1] else "≈"
+        snippet = smallest[3][:40]
+        lines.append(f"- Smallest text: {mark}{smallest[0]:g} pt in '{smallest[2]}' (\"{snippet}\")")
+        if smallest[0] < SMALL_TEXT_PT:
+            flags.append(f"text below {SMALL_TEXT_PT} pt")
+    lines.append(f"- Words on slide: {words}")
+    if words > MANY_WORDS:
+        flags.append("many words")
+    if any(getattr(s_, "has_chart", False) and s_.has_chart for s_ in walk(slide.shapes)):
+        lines.append("- Chart text is not measured; check it on the rendered slide.")
+
+    boxes = []
+    for shape in slide.shapes:
+        b = _bbox(shape)
+        if b is None:
+            continue
+        area = (b[2] - b[0]) * (b[3] - b[1])
+        if area <= 0:
+            continue
+        if b[0] < 0 or b[1] < 0 or b[2] > sw or b[3] > sh:
+            lines.append(f"- '{shape.name}' extends beyond the slide edge")
+            flags.append("off-slide shape")
+        if area >= 0.9 * sw * sh:
+            continue  # background-sized shape; overlaps with it are expected
+        if shape.is_placeholder and shape.has_text_frame and not shape.text_frame.text.strip():
+            continue
+        boxes.append((shape.name, b, area))
+    for i in range(len(boxes)):
+        for j in range(i + 1, len(boxes)):
+            (n1, b1, a1), (n2, b2, a2) = boxes[i], boxes[j]
+            w = min(b1[2], b2[2]) - max(b1[0], b2[0])
+            h = min(b1[3], b2[3]) - max(b1[1], b2[1])
+            if w > 0 and h > 0:
+                share = w * h / min(a1, a2)
+                if share > 0.05:
+                    lines.append(f"- Possible overlap: '{n1}' and '{n2}' ({share:.0%} of the smaller)")
+                    flags.append("overlap")
+
+    for shape in walk(slide.shapes):
+        if shape.shape_type == MSO_SHAPE_TYPE.PICTURE and shape.width:
+            try:
+                px_w, px_h = shape.image.size
+            except Exception:
+                continue
+            inches = shape.width / EMU_PER_INCH
+            ppi = px_w / inches if inches else 0
+            note = ""
+            if ppi >= HIGH_PPI:
+                note = "; large image shown small: if it is a screenshot, its text may be too small"
+                flags.append("shrunk image")
+            elif ppi < LOW_PPI:
+                note = "; small image stretched: may look blurry"
+                flags.append("low-resolution image")
+            lines.append(f"- Picture '{shape.name}': {px_w}×{px_h} px shown {inches:.1f} in wide "
+                         f"({ppi:.0f} px per inch{note})")
+    return lines, flags, smallest, words
+
+
 def walk(shapes):
     for shape in shapes:
         if shape.shape_type == MSO_SHAPE_TYPE.GROUP:
@@ -88,17 +270,23 @@ def walk(shapes):
 def extract(deck_path: Path) -> str:
     prs = Presentation(str(deck_path))
     out = [f"# Deck extract: {deck_path.name}", ""]
-    out.append(f"Slides: {len(prs.slides)}")
-    out.append("Source: visible slide content and speaker notes, extracted automatically. "
-               "Layout, type size, and images are not shown here; see the rendered PDF if present.")
+    out.append(f"Slides: {len(prs.slides)}. Slide size: "
+               f"{prs.slide_width / EMU_PER_INCH:.2f} × {prs.slide_height / EMU_PER_INCH:.2f} in")
+    out.append("Source: visible slide content, speaker notes, and measurements, extracted "
+               "automatically. Layout and images are not shown here; see the rendered PDF if present.")
     out.append("")
+    summary, slides_out = [], []
     for i, slide in enumerate(prs.slides, start=1):
+        m_lines, m_flags, smallest, words = measurements(slide, prs)
+        size_txt = "—" if smallest is None else f"{'' if smallest[1] else '≈'}{smallest[0]:g}"
+        summary.append(f"| {i} | {size_txt} | {words} | {', '.join(dict.fromkeys(m_flags)) or ''} |")
+        out_slide = slides_out
         hidden = slide._element.get("show") == "0"
         title = ""
         if slide.shapes.title is not None and slide.shapes.title.has_text_frame:
             title = slide.shapes.title.text_frame.text.strip()
-        out.append(f"## Slide {i}{' (HIDDEN)' if hidden else ''}: {title or '[no title]'}")
-        out.append(f"Layout: {slide.slide_layout.name}")
+        out_slide.append(f"## Slide {i}{' (HIDDEN)' if hidden else ''}: {title or '[no title]'}")
+        out_slide.append(f"Layout: {slide.slide_layout.name}")
         body, pictures = [], 0
         for shape in walk(slide.shapes):
             if slide.shapes.title is not None and shape.shape_id == slide.shapes.title.shape_id:
@@ -117,16 +305,31 @@ def extract(deck_path: Path) -> str:
                 pictures += 1
                 desc = alt_text(shape)
                 body.append(f"Picture {pictures}: " + (f"alt text: {desc}" if desc else "no alt text"))
-        out.append("")
-        out.append("Visible content:")
-        out.extend(body or ["- [none extracted]"])
+        out_slide.append("")
+        out_slide.append("Visible content:")
+        out_slide.extend(body or ["- [none extracted]"])
         notes = ""
         if slide.has_notes_slide and slide.notes_slide.notes_text_frame is not None:
             notes = slide.notes_slide.notes_text_frame.text.strip()
-        out.append("")
-        out.append("Speaker notes:")
-        out.append(notes if notes else "[none]")
-        out.append("")
+        out_slide.append("")
+        out_slide.append("Speaker notes:")
+        out_slide.append(notes if notes else "[none]")
+        out_slide.append("")
+        out_slide.append("Measurements:")
+        out_slide.extend(m_lines)
+        out_slide.append("")
+    out.append("## Measurements summary")
+    out.append("")
+    out.append("Sizes marked ≈ are inherited from the layout or master, or reduced by automatic "
+               "shrinking. Flags use rough thresholds (text below "
+               f"{SMALL_TEXT_PT} pt, over {MANY_WORDS} words, images at {HIGH_PPI}+ or under "
+               f"{LOW_PPI} px per inch); judge them against the room.")
+    out.append("")
+    out.append("| Slide | Smallest text (pt) | Words | Flags |")
+    out.append("| - | - | - | - |")
+    out.extend(summary)
+    out.append("")
+    out.extend(slides_out)
     return "\n".join(out)
 
 
@@ -153,7 +356,7 @@ def render(deck_path: Path, out_dir: Path) -> str:
     if shutil.which("pdftoppm"):
         img_dir = out_dir / "slides"
         img_dir.mkdir(exist_ok=True)
-        subprocess.run(["pdftoppm", "-png", "-r", "80", str(pdf), str(img_dir / "slide")],
+        subprocess.run(["pdftoppm", "-png", "-r", "120", str(pdf), str(img_dir / "slide")],
                        check=True, capture_output=True, timeout=300)
         msg += f"\nSlide images: {img_dir}"
     else:

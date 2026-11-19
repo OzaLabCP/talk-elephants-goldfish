@@ -2,9 +2,11 @@
 name: teg-review
 description: >-
   Talking with Elephants & Goldfish review. Runs fresh-context reviews of a
-  talk or lesson: a big-picture review first, then design, comprehension,
-  rejoining, evidence, and delivery reviews, plus misconception and assessment reviews
-  for lectures and a judge review for judged talks. Builds a separate packet
+  talk or lesson in stages: the plan (big picture, design, story and
+  messaging), the materials (comprehension, rejoining, evidence and claims,
+  slide design, delivery, plus misconception and assessment reviews for
+  lectures and a judge review for judged talks), and a final copyedit and
+  consistency pass. Builds a separate packet
   for each reviewer so private intent and answer keys stay out, collects the
   findings, proposes fix, contest, escalate, or decline for each, and records
   the presenter's decisions. Use when a brief and a plan or materials exist
@@ -29,12 +31,14 @@ Files in this folder:
 
 ## Where this fits
 
-This skill runs at two points (stage map in `../teg-start/SKILL.md`):
+This skill runs at three points (stage map in `../teg-start/SKILL.md`):
 
 - **Stage B · Design → Review the plan**, when there is a plan but no
   materials yet
 - **Stage C · Build → Review the materials**, when slides, notes, or student
   materials exist
+- **Stage C · Build → Final polish**, a copyedit and consistency pass once
+  the content has settled, shortly before delivery
 
 At the start, read `progress.md` if it exists, then show a status line, for
 example:
@@ -90,10 +94,11 @@ of chosen sections, or something else.
 
 | Situation | Reviews |
 | - | - |
-| Plan only, no materials yet | Big picture → design |
-| Talk with materials | Big picture → design, comprehension, evidence, delivery |
-| Lecture with materials | Big picture → design (with prerequisites and sequence), comprehension (learner), misconceptions, evidence (accuracy), assessment (two phases), delivery (with participation) |
+| Plan only, no materials yet | Big picture → design, story and messaging (talks) |
+| Talk with materials | Big picture → comprehension, story and messaging, evidence and claims, slide design, delivery (design too, if the plan was never reviewed) |
+| Lecture with materials | Big picture → design (with prerequisites and sequence), comprehension (learner), misconceptions, evidence and claims (accuracy), assessment (two phases), slide design, delivery (with participation) |
 | Judged talk | The talk set, plus judge |
+| Content settled, shortly before delivery | Final polish: copyedit and consistency |
 | Small revision for a familiar audience | One focused review of the changed sections, usually comprehension |
 | Deck will also circulate without the presenter | Add a separate comprehension review of the stand-alone version |
 | Live talk or class longer than about 10 minutes | Add one or two rejoining reviews (below) |
@@ -106,9 +111,17 @@ the section after the densest explanation. Each rejoin point needs its own
 fresh reviewer. Skip this review for a deck that circulates without the
 presenter: a reader can turn back.
 
-Run a delivery review only when there are rendered slides at their real
-size, and ideally a timed rehearsal recording or transcript. Without them,
+**Slide design** needs rendered slides and the deck measurements (Step 4),
+plus the room and screen: how many seats, how large the screen, how far the
+back row sits. Take these from the brief, or ask. It can run before any
+rehearsal.
+
+**Delivery** needs a timed rehearsal recording or transcript. Without one,
 skip it and say why.
+
+**Copyedit and consistency** runs last, as its own round, once fixes from
+the materials review are in. Polishing slides that will still change wastes
+the presenter's time.
 
 ## Step 3: Find the narration
 
@@ -127,13 +140,16 @@ For a live talk, comprehension and delivery depend on what will be said.
 
 Follow `packets.md`.
 
-1. For each reviewer, create `reviews/<version>/packets/<reviewer>/` and
+1. For a PowerPoint deck, run `../teg-inventory/scripts/extract_deck.py`
+   with `--render`. It produces the slide images, the slide text, and the
+   measurements the slide design reviewer needs.
+2. For each reviewer, create `reviews/<version>/packets/<reviewer>/` and
    copy in only the permitted files. Add a `manifest.md` that lists the
-   files, describes the participants' background, gives the format and
-   length, and states whether narration is included.
-2. Run the leak checklist in `packets.md` on every comprehension, learner,
-   assessment (phase 1), and judge packet.
-3. Show the presenter one table (reviewer, receives, kept out) and ask one
+   files, describes the participants' background, gives the format, length,
+   and room, and states whether narration is included.
+3. Run the leak checklist in `packets.md` on every comprehension, story
+   (materials stage), learner, assessment (phase 1), and judge packet.
+4. Show the presenter one table (reviewer, receives, kept out) and ask one
    question: "Is there anything here the audience would not have, or
    anything missing that they would have?" Skip this check only if the
    presenter has said to.
@@ -288,6 +304,13 @@ For example:
 >
 > *Example reply: "1 out loud · 2 no · 3 reject F5." Or "all good" to accept everything.*
 
+**Copyedit rounds:** typo, style, and citation fixes are low-stakes, so
+show them as one row in the decision table ("14 copy fixes, listed below")
+and list them under the table, one line each ("slide 3: recieve →
+receive"), so the presenter can decide without opening a file. Show every
+number mismatch and term inconsistency as its own row: a number that
+differs between places may be an evidence problem, not a typo.
+
 For each ID the presenter names, ask what they want instead if it is not
 clear: a different response or a different fix. Record every decision and
 its reason in `review_report.md`. For findings nobody named, the reason is
@@ -336,6 +359,11 @@ next-step block that applies:
 > up later.
 
 > **Review the materials complete** → `reviews/[version]/review_report.md`.
-> **Next: Deliver and debrief**, after a human review if there is time.
+> **Next: Final polish** (copyedit and consistency), once the accepted fixes
+> are in the slides. A human review fits here too, if there is time.
 > Say "next" to start, "status" to see the whole map, or stop here and pick
 > up later.
+
+> **Final polish complete** → `reviews/[version]/review_report.md`.
+> **Next: Deliver and debrief** (`teg-debrief` after the talk).
+> Say "status" to see the whole map, or stop here.

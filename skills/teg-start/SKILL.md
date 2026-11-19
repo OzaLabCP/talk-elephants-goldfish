@@ -52,7 +52,7 @@ Show the **full map** only if the person asks what the steps involve:
 | | Plan | Draft the timed plan for you to mark up, or build it step by step | `teg-plan` | `experience_plan.md` |
 | | Review the plan | Fresh reviewers check the big picture and the design | `teg-review` | `reviews/` |
 | **C. Build** | Build and rehearse | You make the slides and notes from the plan, in your usual tool; a drift check compares them with the plan; then you rehearse aloud, timed | Checklist from the Elephant, plus `teg-drift` | Slides, notes, drift report, rehearsal recording |
-| | Review the materials | Fresh reviewers check comprehension, evidence, and delivery | `teg-review` | `reviews/`, `review_record.md` |
+| | Review the materials | Fresh reviewers check comprehension, story, evidence and claims, slide design, and delivery; then a final copyedit pass once content settles | `teg-review` | `reviews/`, `review_record.md` |
 | **D. Deliver and learn** | Deliver and debrief | Give the talk; compare what happened with the brief and the reviews; decide what to change | `teg-debrief` | `debrief.md`, updated brief |
 
 \* Only when reusing existing material.

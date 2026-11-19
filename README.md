@@ -49,9 +49,10 @@ claude plugin install teg@teg
 Inside Claude Code 2.1.275 or later, one command does both:
 `/plugin install teg --marketplace OzaLabCP/talk-elephants-goldfish`.
 
-To take stock of an existing PowerPoint deck, the package uses Python 3
-with `python-pptx` (`pip install python-pptx`). LibreOffice is optional; it
-lets the package render slide images so reviewers can see layout.
+To read PowerPoint decks (taking stock, drift checks, slide design
+measurements), the package uses Python 3 with `python-pptx`
+(`pip install python-pptx`). LibreOffice is optional; it renders slide
+images so reviewers can see layout.
 
 **2. Make a folder for the talk.** Put any existing material in it: a deck,
 notes, an outline. The package writes its files there (`brief.md`,
@@ -131,6 +132,29 @@ You can stop after any step, skip steps, or go back. The package does not
 generate slides: it helps you decide what the talk should do, plans it,
 checks it, and helps you learn from it. You build the slides in your own
 tool.
+
+## What the reviewers check
+
+Fresh reviewers run in three rounds, so each looks at material that is
+ready for it.
+
+| Round | Reviewer | Checks |
+| - | - | - |
+| Plan | Big picture | Is this the right talk for this audience, purpose, and time? |
+| Plan | Design | Does the plan carry out the brief: order, timing, alignment? |
+| Plan and materials | Story and messaging | Hook, through-line, transitions, payoff; what a listener would retell |
+| Materials | Comprehension | What a listener at your audience's level actually takes away |
+| Materials | Rejoining | Whether someone who zoned out can pick the thread back up |
+| Materials | Evidence and claims | Support for each claim, overclaiming, sources, fair charts |
+| Materials | Slide design | Text size for the room, dense screenshots, overlaps, contrast, using measured sizes |
+| Materials | Delivery | Pacing and narration, from a rehearsal recording |
+| Materials (lectures) | Misconceptions, assessment | What students could get wrong; whether tasks show learning |
+| Materials (judged talks) | Judge | Scores against the rubric |
+| Final polish | Copyedit and consistency | Typos, terms, numbers that match everywhere, citations |
+| Any time | Drift (`teg-drift`) | Slides against the brief, plan, and recorded decisions |
+
+You choose which reviews to run; the package proposes a set for your
+situation.
 
 **How decisions work.** Anything you have to decide appears in chat,
 complete enough to decide from, so you never need to open a file to make a

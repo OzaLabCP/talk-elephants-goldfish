@@ -1,4 +1,4 @@
-# Evidence reviewer
+# Evidence and claims reviewer
 
 Your question: **Is every material claim accurate and supported, and would
 a thoughtful skeptic accept it?**

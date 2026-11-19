@@ -84,8 +84,11 @@ Repeat the big-picture review after a round of substantial revisions. Detailed c
 | Design review | Brief, experience plan, constraints, and referenced evidence. | Preparation conversation and undocumented explanations. |
 | Audience or learner comprehension | Expected prior knowledge and exactly what participants encounter. | Private rationale, additional answer cues, and background unavailable to participants. |
 | Rejoining listener | The opening, then what participants encounter from a chosen point onward, with the stretch before it removed. | The missed stretch, private rationale, and background unavailable to participants. |
-| Accuracy and evidence | Claims, examples, sources, data, and qualifications. | Unsupported explanations offered only in conversation. |
+| Story and messaging | At the plan stage, the experience plan; at the materials stage, exactly what participants encounter. | The brief and private rationale. |
+| Evidence and claims | Claims, examples, sources, data, and qualifications. | Unsupported explanations offered only in conversation. |
+| Slide design | Rendered slides, measurements such as the smallest text size, and the room and screen. | The brief; narration is not needed. |
 | Delivery review | Rendered materials and a timed rehearsal, recording, or observation. | Assumptions that the written outline proves readability or pacing. |
+| Copyedit and consistency | All text participants see or hear, including notes, handouts, and references. | Nothing sensitive is needed; the brief is not. |
 | Judge | What judges see and hear, the rubric and rules, and the panel’s background. | The brief, private rationale, and information about other entries. |
 
 For comprehension, ask the reviewer to reconstruct the message before revealing the private statement of intent. Preserve any objectives or summaries that participants actually receive. For assessment review, obtain an independent attempt before revealing the answer key, then check the key and rubric.
@@ -93,6 +96,8 @@ For comprehension, ask the reviewer to reconstruct the message before revealing 
 A live talk is reviewed with its spoken explanation. A deck or recording distributed independently needs a separate review of that experience. For long or complex sequences, review sections in presentation order so later explanations do not conceal earlier confusion.
 
 For a live talk or class longer than about ten minutes, add a rejoining review. A fresh reviewer hears the opening, misses a stretch, and rejoins partway through, as a listener does after looking at a phone. Choose rejoin points where losing the thread would cost the most, such as the start of the results. The review shows whether section titles, recaps, and restated questions let a listener back in.
+
+Run the reviews in three rounds, so each one looks at material that is ready for it. Review the plan for the big picture, design, and story before any slides exist. Review the materials for comprehension, rejoining, evidence and claims, slide design, and delivery once slides and a rehearsal exist. Finish with a copyedit and consistency pass once the content has settled: polishing slides that will still change wastes effort.
 
 Use a separate review context; asking the authoring conversation to forget its history does not create an independent review. When separation is unavailable, label the result an internal critique.
 
@@ -208,7 +213,13 @@ Begin with the big-picture review, then use the shared review materials with the
 
 - **Skepticism:** Which claim is least supported? What credible alternative or objection is left unanswered? Does the recommendation exceed the evidence?
 
-- **Delivery:** Can listeners read and interpret the visuals at the intended size? Does the narration explain the necessary connections? Where does the pace become difficult?
+- **Story and messaging:** Does the opening give listeners a reason to care and a question to follow? Does each section lead to the next? Does the ending pay off the opening? What would a listener retell tomorrow?
+
+- **Slide design:** Can someone in the back row read every slide? Look for small text, dense screenshots, overlapping or cut-off elements, weak contrast, and charts that cannot be read in the time they are shown.
+
+- **Delivery:** Does the narration explain the necessary connections? Where does the pace become difficult?
+
+- **Copyedit and consistency:** Are terms, numbers, names, and citations correct and the same everywhere they appear, on slides, in the narration, and in handouts?
 
 Ask for the location and consequence of each finding. A reviewer who disagrees with a recommendation should identify the competing reasoning; disagreement alone does not establish that the talk is unclear.
 
@@ -318,6 +329,8 @@ Begin with the big-picture review: does this session, as planned, suit these stu
 
 - **Participation and delivery:** Check instructions, workload, visibility, pacing, and whether students have a workable way to participate.
 
+- **Slide design and copyedit:** As for talks, check that every slide can be read from the back of the room, and finish with a consistency pass across slides, handouts, and solutions.
+
 A review should identify the particular gap in an explanation or task. An AI’s ability to solve the task is not evidence that students have acquired the skill.
 
 ## Rehearse and prepare responses to student thinking
@@ -423,7 +436,7 @@ The evidence may overlap, while the sequence, depth, activities, and measures of
 >
 > Develop the argument and a timed experience plan before polishing slides. When more than one structure is defensible, show me the options with their trade-offs. If I ask you to choose, recommend one, say why, and proceed when I say go. Offer to draft the whole plan for me to mark up, or to build it with me step by step. If material already exists, recommend what to keep, reframe, replace, remove, or move to supporting material, with reasons.
 >
-> Start reviews with a fresh big-picture review of whether this talk fits the audience, purpose, and occasion. Then prepare distinct materials for fresh comprehension, evidence, and delivery reviews. Keep the private intended message out of the initial comprehension test while retaining everything the audience actually receives. For each finding, propose whether to fix, contest, escalate, or decline it; a contest must cite something the reviewer could have read, and anything only I can confirm comes to me. I decide, and accepted changes go into the materials. If I am reusing a deck, check it for drift from the current brief. Help me plan human reviewers so that at least one representative person stays fresh for the full rehearsal. For a live talk, include a rejoining review from partway through. Put every decision I need to make in the chat as one table, with your proposal for each, and let me name only the exceptions.
+> Start reviews with a fresh big-picture review of whether this talk fits the audience, purpose, and occasion. Then prepare distinct materials for fresh comprehension, story and messaging, evidence and claims, slide design, and delivery reviews, and finish with a copyedit and consistency pass once the content has settled. Keep the private intended message out of the initial comprehension test while retaining everything the audience actually receives. For each finding, propose whether to fix, contest, escalate, or decline it; a contest must cite something the reviewer could have read, and anything only I can confirm comes to me. I decide, and accepted changes go into the materials. If I am reusing a deck, check it for drift from the current brief. Help me plan human reviewers so that at least one representative person stays fresh for the full rehearsal. For a live talk, include a rejoining review from partway through. Put every decision I need to make in the chat as one table, with your proposal for each, and let me name only the exceptions.
 >
 > Finish with a delivery package, a rehearsal plan, likely questions, and a short plan for learning from audience responses.
 >
@@ -437,7 +450,7 @@ The evidence may overlap, while the sequence, depth, activities, and measures of
 >
 > Connect each objective to prerequisites, explanation, practice, an independent student response, and feedback. Develop a timed lesson plan that includes student thinking and transitions. When more than one sequence is defensible, show me the options with their trade-offs. If I ask you to choose, recommend one, say why, and proceed when I say go. Offer to draft the whole plan for me to mark up, or to build it with me step by step. Explain how existing material should be retained or changed.
 >
-> Start reviews with a fresh big-picture review of whether this session fits these students, this point in the course, and the time available. Then prepare distinct materials for fresh prerequisite, misconception, accuracy, assessment, and delivery reviews. Keep instructor rationale and answer keys out of the initial learner or task review. Then review the response criteria and solutions explicitly. For each finding, propose whether to fix, contest, escalate, or decline it; a contest must cite something the reviewer could have read, and anything only I can confirm comes to me. If I am reusing a deck, check it for drift from the current brief. Help me plan human reviewers so that at least one representative person stays fresh for the final version. Include a rejoining review from partway through the session. Put every decision I need to make in the chat as one table, with your proposal for each, and let me name only the exceptions.
+> Start reviews with a fresh big-picture review of whether this session fits these students, this point in the course, and the time available. Then prepare distinct materials for fresh prerequisite, misconception, accuracy, assessment, slide design, and delivery reviews, and finish with a copyedit and consistency pass once the content has settled. Keep instructor rationale and answer keys out of the initial learner or task review. Then review the response criteria and solutions explicitly. For each finding, propose whether to fix, contest, escalate, or decline it; a contest must cite something the reviewer could have read, and anything only I can confirm comes to me. If I am reusing a deck, check it for drift from the current brief. Help me plan human reviewers so that at least one representative person stays fresh for the final version. Include a rejoining review from partway through the session. Put every decision I need to make in the chat as one table, with your proposal for each, and let me name only the exceptions.
 >
 > Finish with teaching materials, separate student materials and instructor notes, a plan for responding to student difficulties, and a way to use student work to improve the next lesson.
 >
@@ -445,7 +458,7 @@ The evidence may overlap, while the sequence, depth, activities, and measures of
 
 ## Fresh review
 
-> Review the supplied version independently. Use only the material authorized for this review. Your role is [big-picture, design, comprehension, rejoining (starting partway through), evidence, assessment, delivery, drift (comparing materials with the brief, plan, and decisions), or judge scoring against the supplied criteria]. Expected participant background is [insert, including how close they are to the field: specialists, adjacent experts, informed non-experts, or novices].
+> Review the supplied version independently. Use only the material authorized for this review. Your role is [big-picture, design, story and messaging, comprehension, rejoining (starting partway through), evidence and claims, assessment, slide design, delivery, copyedit and consistency, drift (comparing materials with the brief, plan, and decisions), or judge scoring against the supplied criteria]. Expected participant background is [insert, including how close they are to the field: specialists, adjacent experts, informed non-experts, or novices].
 >
 > If the role, participant background, or review materials are missing, ask me for them before you begin. Do not ask what I intended or request background the participants would not have; work from the materials as supplied.
 >
