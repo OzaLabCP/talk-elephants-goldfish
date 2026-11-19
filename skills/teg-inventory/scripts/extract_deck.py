@@ -10,12 +10,19 @@ reviewer can see layout.
 
 Usage:
     python3 extract_deck.py DECK.pptx OUT_DIR [--render]
+        [--screen-width-ft W --back-row-ft D [--screen-height-ft H]]
+
+With the room options, it also estimates how far away each slide's
+smallest text can be read, using a common display-legibility guideline:
+capital letters at least 16 minutes of arc tall at the viewer's eye.
 
 Requires python-pptx. Rendering also requires LibreOffice (soffice) and
 pdftoppm (poppler-utils).
 """
 
 import argparse
+import math
+import re
 import shutil
 import subprocess
 import sys
@@ -86,6 +93,30 @@ SMALL_TEXT_PT = 18      # heuristic: check text below this size against the room
 MANY_WORDS = 75         # heuristic: slides above this word count are text-heavy
 HIGH_PPI = 300          # heuristic: a large image shown small (a shrunk screenshot?)
 LOW_PPI = 96            # heuristic: a small image stretched (may look blurry)
+CAP_HEIGHT = 0.65       # capital-letter height as a share of font size (Calibri is about 0.64)
+MIN_ARCMIN = 16         # minimum capital-letter height, in minutes of arc, for comfortable reading
+
+
+def room_scale(prs, room):
+    """How many times larger the slide appears on the screen."""
+    slide_w = prs.slide_width / EMU_PER_INCH
+    slide_h = prs.slide_height / EMU_PER_INCH
+    scale = room["screen_w_ft"] * 12 / slide_w
+    if room.get("screen_h_ft"):
+        scale = min(scale, room["screen_h_ft"] * 12 / slide_h)
+    return scale
+
+
+def readable_ft(size_pt, scale):
+    """Farthest distance, in feet, at which text of this size meets the guideline."""
+    cap_in = size_pt / 72 * CAP_HEIGHT * scale
+    return cap_in / math.tan(math.radians(MIN_ARCMIN / 60)) / 12
+
+
+def needed_pt(distance_ft, scale):
+    """Smallest text size, in points, that meets the guideline at this distance."""
+    cap_in = distance_ft * 12 * math.tan(math.radians(MIN_ARCMIN / 60))
+    return cap_in / (CAP_HEIGHT * scale) * 72
 
 
 def _lvl_size(container, level):
@@ -180,7 +211,7 @@ def _bbox(shape):
     return (shape.left, shape.top, shape.left + shape.width, shape.top + shape.height)
 
 
-def measurements(slide, prs):
+def measurements(slide, prs, room=None):
     """Lines describing text size, word count, overlaps, off-slide shapes, and pictures."""
     sw, sh = prs.slide_width, prs.slide_height
     sizes, words = [], 0
@@ -206,6 +237,13 @@ def measurements(slide, prs):
         lines.append(f"- Smallest text: {mark}{smallest[0]:g} pt in '{smallest[2]}' (\"{snippet}\")")
         if smallest[0] < SMALL_TEXT_PT:
             flags.append(f"text below {SMALL_TEXT_PT} pt")
+        if room:
+            scale = room_scale(prs, room)
+            reach = readable_ft(smallest[0], scale)
+            lines.append(f"- Smallest text is readable to about {reach:.0f} ft "
+                         f"(back row: {room['back_ft']:g} ft)")
+            if reach < room["back_ft"]:
+                flags.append("too small for the back row")
     lines.append(f"- Words on slide: {words}")
     if words > MANY_WORDS:
         flags.append("many words")
@@ -267,7 +305,7 @@ def walk(shapes):
             yield shape
 
 
-def extract(deck_path: Path) -> str:
+def extract(deck_path: Path, room=None) -> str:
     prs = Presentation(str(deck_path))
     out = [f"# Deck extract: {deck_path.name}", ""]
     out.append(f"Slides: {len(prs.slides)}. Slide size: "
@@ -277,9 +315,12 @@ def extract(deck_path: Path) -> str:
     out.append("")
     summary, slides_out = [], []
     for i, slide in enumerate(prs.slides, start=1):
-        m_lines, m_flags, smallest, words = measurements(slide, prs)
+        m_lines, m_flags, smallest, words = measurements(slide, prs, room)
         size_txt = "—" if smallest is None else f"{'' if smallest[1] else '≈'}{smallest[0]:g}"
-        summary.append(f"| {i} | {size_txt} | {words} | {', '.join(dict.fromkeys(m_flags)) or ''} |")
+        reach_txt = ""
+        if room and smallest is not None:
+            reach_txt = f" {readable_ft(smallest[0], room_scale(prs, room)):.0f} |"
+        summary.append(f"| {i} | {size_txt} |{reach_txt} {words} | {', '.join(dict.fromkeys(m_flags)) or ''} |")
         out_slide = slides_out
         hidden = slide._element.get("show") == "0"
         title = ""
@@ -304,7 +345,13 @@ def extract(deck_path: Path) -> str:
             if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
                 pictures += 1
                 desc = alt_text(shape)
-                body.append(f"Picture {pictures}: " + (f"alt text: {desc}" if desc else "no alt text"))
+                if not desc:
+                    alt = "no alt text"
+                elif re.search(r"\.(png|jpe?g|gif|bmp|tiff?|svg|emf|wmf)$", desc, re.I):
+                    alt = f"alt text is a file name ({desc})"
+                else:
+                    alt = f"alt text: {desc}"
+                body.append(f"Picture '{shape.name}': {alt}")
         out_slide.append("")
         out_slide.append("Visible content:")
         out_slide.extend(body or ["- [none extracted]"])
@@ -325,8 +372,27 @@ def extract(deck_path: Path) -> str:
                f"{SMALL_TEXT_PT} pt, over {MANY_WORDS} words, images at {HIGH_PPI}+ or under "
                f"{LOW_PPI} px per inch); judge them against the room.")
     out.append("")
-    out.append("| Slide | Smallest text (pt) | Words | Flags |")
-    out.append("| - | - | - | - |")
+    out.append("Text inside pictures, such as screenshots, is not measured: see the picture "
+               "resolution flags. Automatic shrinking can differ between PowerPoint and "
+               "LibreOffice, so line breaks and overlaps may differ from the rendered images.")
+    out.append("")
+    if room:
+        scale = room_scale(prs, room)
+        shape_note = ("fitted to the screen's width and height" if room.get("screen_h_ft")
+                      else "assumed to fill the screen's width (screen height not given)")
+        out.append(f"Room: screen {room['screen_w_ft']:g} ft wide"
+                   + (f" × {room['screen_h_ft']:g} ft high" if room.get("screen_h_ft") else "")
+                   + f", back row {room['back_ft']:g} ft away. The slide is {shape_note}, "
+                   f"so it appears {scale:.1f} times its size. Guideline: capital letters at least "
+                   f"{MIN_ARCMIN} minutes of arc tall, with capitals {CAP_HEIGHT:.0%} of the font "
+                   f"size. Text must be at least about {needed_pt(room['back_ft'], scale):.0f} pt "
+                   f"to be read comfortably from the back row.")
+        out.append("")
+        out.append("| Slide | Smallest text (pt) | Readable to (ft) | Words | Flags |")
+        out.append("| - | - | - | - | - |")
+    else:
+        out.append("| Slide | Smallest text (pt) | Words | Flags |")
+        out.append("| - | - | - | - |")
     out.extend(summary)
     out.append("")
     out.extend(slides_out)
@@ -372,12 +438,21 @@ def main():
     ap.add_argument("deck", type=Path)
     ap.add_argument("out_dir", type=Path)
     ap.add_argument("--render", action="store_true", help="also render to PDF and PNG images")
+    ap.add_argument("--screen-width-ft", type=float, help="projected image width, in feet")
+    ap.add_argument("--screen-height-ft", type=float, help="projected image height, in feet (optional)")
+    ap.add_argument("--back-row-ft", type=float, help="distance from the screen to the back row, in feet")
     args = ap.parse_args()
+    room = None
+    if args.screen_width_ft and args.back_row_ft:
+        room = {"screen_w_ft": args.screen_width_ft, "screen_h_ft": args.screen_height_ft,
+                "back_ft": args.back_row_ft}
+    elif args.screen_width_ft or args.back_row_ft:
+        sys.exit("Give both --screen-width-ft and --back-row-ft (and optionally --screen-height-ft).")
     if args.deck.suffix.lower() != ".pptx":
         sys.exit("Only .pptx is supported. Export other formats (Keynote, Google Slides) to .pptx or PDF first.")
     args.out_dir.mkdir(parents=True, exist_ok=True)
     md_path = args.out_dir / (args.deck.stem + "_extract.md")
-    md_path.write_text(extract(args.deck), encoding="utf-8")
+    md_path.write_text(extract(args.deck, room), encoding="utf-8")
     print(f"Extract: {md_path}")
     if args.render:
         print(render(args.deck, args.out_dir))
